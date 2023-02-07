@@ -2,6 +2,8 @@
 
 This script fetches the list of metrics from a ScyllaDB server and generates a single page HTML documentation for all the metrics.
 
+See the docs at [**knadh.github.io/scylladb-metrics**](https://knadh.github.io/scylladb-metrics/)
+
 ### Running locally
 
 - Clone this repository.
