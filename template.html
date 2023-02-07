@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ScyllaDB Prometheus metrics list and documentation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="List of exported ScyllaDB Prometheus metrics with documentation." />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: "Helvetica Neue", "Segoe UI", sans-serif;
+			font-size: 14px;
+			line-height: 24px;
+		}
+
+		main {
+			max-width: 1000px;
+			margin: 30px auto;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		td {
+			padding: 5px;
+			border: 0;
+		}
+		thead th {
+			background: #eee;
+			font-weight: bold;
+			text-align: left;
+		}
+		tbody td {
+			border-bottom: 1px solid #eee;
+		}
+		tbody tr:hover td {
+			background: #eee;
+		}
+
+		footer {
+			margin-top: 30px;
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+
+<main>
+	<h1>List of ScyllaDB metrics</h1>
+	<p>
+		Documentation of all Prometheus metrics exported by ScyllaDB
+		generated from http://scylla-url:9180/metrics
+	</p>
+	<p>
+		<input type="text" placeholder="Filter by name" id="q" autofocus />
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Metric</th>
+				<th>Type</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			$rows
+		</tbody>
+	</table>
+
+	<footer>
+		Generated on $date. Edit at <a href="https://github.com/knadh/scylla-metrics-docs">knadh/scylla-metrics-docs</a>.
+	</footer>
+
+	<script>
+		let timer = null;
+
+		const filter = (query) => {
+			const hasQuery = query.length > 1;
+
+			document.querySelectorAll("tbody tr").forEach((el) => {
+				let disp = "";
+				if(hasQuery && el.innerText.indexOf(query) === -1) {
+					disp = "none";
+				}
+
+				el.style.display = disp;
+			});
+		};
+
+		document.querySelector("#q").onkeyup = (e) => {
+			if (timer) {
+				window.clearTimeout(timer);
+			};
+
+			timer = window.setTimeout(() => {
+				window.clearTimeout(timer);
+				filter(e.target.value);
+			}, 100);
+		};
+	</script>
+</main>
+
+</body>
+</html>

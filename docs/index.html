@@ -1,0 +1,3798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ScyllaDB Prometheus metrics list and documentation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="List of exported ScyllaDB Prometheus metrics with documentation." />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: "Helvetica Neue", "Segoe UI", sans-serif;
+			font-size: 14px;
+			line-height: 24px;
+		}
+
+		main {
+			max-width: 1000px;
+			margin: 30px auto;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		td {
+			padding: 5px;
+			border: 0;
+		}
+		thead th {
+			background: #eee;
+			font-weight: bold;
+			text-align: left;
+		}
+		tbody td {
+			border-bottom: 1px solid #eee;
+		}
+		tbody tr:hover td {
+			background: #eee;
+		}
+
+		footer {
+			margin-top: 30px;
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+
+<main>
+	<h1>List of ScyllaDB metrics</h1>
+	<p>
+		Documentation of all Prometheus metrics exported by ScyllaDB
+		generated from http://scylla-url:9180/metrics
+	</p>
+	<p>
+		<input type="text" placeholder="Filter by name" id="q" autofocus />
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Metric</th>
+				<th>Type</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+				<td>1</td>
+				<td class="metric">scylla_alien_receive_batch_queue_length</td>
+				<td>gauge</td>
+				<td>Current receive batch queue length</td>
+				</tr>
+			
+
+				<tr>
+				<td>2</td>
+				<td class="metric">scylla_alien_total_received_messages</td>
+				<td>counter</td>
+				<td>Total number of received messages</td>
+				</tr>
+			
+
+				<tr>
+				<td>3</td>
+				<td class="metric">scylla_alien_total_sent_messages</td>
+				<td>counter</td>
+				<td>Total number of sent messages</td>
+				</tr>
+			
+
+				<tr>
+				<td>4</td>
+				<td class="metric">scylla_batchlog_manager_total_write_replay_attempts</td>
+				<td>counter</td>
+				<td>Counts write operations issued in a batchlog replay flow. The high value of this metric indicates that we have a long batch replay list.</td>
+				</tr>
+			
+
+				<tr>
+				<td>5</td>
+				<td class="metric">scylla_cache_active_reads</td>
+				<td>gauge</td>
+				<td>number of currently active reads</td>
+				</tr>
+			
+
+				<tr>
+				<td>6</td>
+				<td class="metric">scylla_cache_bytes_total</td>
+				<td>gauge</td>
+				<td>total size of memory for the cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>7</td>
+				<td class="metric">scylla_cache_bytes_used</td>
+				<td>gauge</td>
+				<td>current bytes used by the cache out of the total size of memory</td>
+				</tr>
+			
+
+				<tr>
+				<td>8</td>
+				<td class="metric">scylla_cache_concurrent_misses_same_key</td>
+				<td>counter</td>
+				<td>total number of operation with misses same key</td>
+				</tr>
+			
+
+				<tr>
+				<td>9</td>
+				<td class="metric">scylla_cache_dummy_row_hits</td>
+				<td>counter</td>
+				<td>total number of dummy rows touched by reads in cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>10</td>
+				<td class="metric">scylla_cache_mispopulations</td>
+				<td>counter</td>
+				<td>number of entries not inserted by reads</td>
+				</tr>
+			
+
+				<tr>
+				<td>11</td>
+				<td class="metric">scylla_cache_partition_evictions</td>
+				<td>counter</td>
+				<td>total number of evicted partitions</td>
+				</tr>
+			
+
+				<tr>
+				<td>12</td>
+				<td class="metric">scylla_cache_partition_hits</td>
+				<td>counter</td>
+				<td>number of partitions needed by reads and found in cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>13</td>
+				<td class="metric">scylla_cache_partition_insertions</td>
+				<td>counter</td>
+				<td>total number of partitions added to cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>14</td>
+				<td class="metric">scylla_cache_partition_merges</td>
+				<td>counter</td>
+				<td>total number of partitions merged</td>
+				</tr>
+			
+
+				<tr>
+				<td>15</td>
+				<td class="metric">scylla_cache_partition_misses</td>
+				<td>counter</td>
+				<td>number of partitions needed by reads and missing in cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>16</td>
+				<td class="metric">scylla_cache_partition_removals</td>
+				<td>counter</td>
+				<td>total number of invalidated partitions</td>
+				</tr>
+			
+
+				<tr>
+				<td>17</td>
+				<td class="metric">scylla_cache_partitions</td>
+				<td>gauge</td>
+				<td>total number of cached partitions</td>
+				</tr>
+			
+
+				<tr>
+				<td>18</td>
+				<td class="metric">scylla_cache_pinned_dirty_memory_overload</td>
+				<td>counter</td>
+				<td>amount of pinned bytes that we tried to unpin over the limit. This should sit constantly at 0, and any number different than 0 is indicative of a bug</td>
+				</tr>
+			
+
+				<tr>
+				<td>19</td>
+				<td class="metric">scylla_cache_range_tombstone_reads</td>
+				<td>counter</td>
+				<td>total amount of range tombstones processed during read</td>
+				</tr>
+			
+
+				<tr>
+				<td>20</td>
+				<td class="metric">scylla_cache_reads</td>
+				<td>counter</td>
+				<td>number of started reads</td>
+				</tr>
+			
+
+				<tr>
+				<td>21</td>
+				<td class="metric">scylla_cache_reads_with_misses</td>
+				<td>counter</td>
+				<td>number of reads which had to read from sstables</td>
+				</tr>
+			
+
+				<tr>
+				<td>22</td>
+				<td class="metric">scylla_cache_row_evictions</td>
+				<td>counter</td>
+				<td>total number of rows evicted from cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>23</td>
+				<td class="metric">scylla_cache_row_hits</td>
+				<td>counter</td>
+				<td>total number of rows needed by reads and found in cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>24</td>
+				<td class="metric">scylla_cache_row_insertions</td>
+				<td>counter</td>
+				<td>total number of rows added to cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>25</td>
+				<td class="metric">scylla_cache_row_misses</td>
+				<td>counter</td>
+				<td>total number of rows needed by reads and missing in cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>26</td>
+				<td class="metric">scylla_cache_row_removals</td>
+				<td>counter</td>
+				<td>total number of invalidated rows</td>
+				</tr>
+			
+
+				<tr>
+				<td>27</td>
+				<td class="metric">scylla_cache_row_tombstone_reads</td>
+				<td>counter</td>
+				<td>total amount of row tombstones processed during read</td>
+				</tr>
+			
+
+				<tr>
+				<td>28</td>
+				<td class="metric">scylla_cache_rows</td>
+				<td>gauge</td>
+				<td>total number of cached rows</td>
+				</tr>
+			
+
+				<tr>
+				<td>29</td>
+				<td class="metric">scylla_cache_rows_compacted_with_tombstones</td>
+				<td>counter</td>
+				<td>Number of rows scanned during write of a tombstone for the purpose of compaction in cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>30</td>
+				<td class="metric">scylla_cache_rows_dropped_by_tombstones</td>
+				<td>counter</td>
+				<td>Number of rows dropped in cache by a tombstone write</td>
+				</tr>
+			
+
+				<tr>
+				<td>31</td>
+				<td class="metric">scylla_cache_rows_dropped_from_memtable</td>
+				<td>counter</td>
+				<td>total number of rows in memtables which were dropped during cache update on memtable flush</td>
+				</tr>
+			
+
+				<tr>
+				<td>32</td>
+				<td class="metric">scylla_cache_rows_merged_from_memtable</td>
+				<td>counter</td>
+				<td>total number of rows in memtables which were merged with existing rows during cache update on memtable flush</td>
+				</tr>
+			
+
+				<tr>
+				<td>33</td>
+				<td class="metric">scylla_cache_rows_processed_from_memtable</td>
+				<td>counter</td>
+				<td>total number of rows in memtables which were processed during cache update on memtable flush</td>
+				</tr>
+			
+
+				<tr>
+				<td>34</td>
+				<td class="metric">scylla_cache_sstable_partition_skips</td>
+				<td>counter</td>
+				<td>number of times sstable reader was fast forwarded across partitions</td>
+				</tr>
+			
+
+				<tr>
+				<td>35</td>
+				<td class="metric">scylla_cache_sstable_reader_recreations</td>
+				<td>counter</td>
+				<td>number of times sstable reader was recreated due to memtable flush</td>
+				</tr>
+			
+
+				<tr>
+				<td>36</td>
+				<td class="metric">scylla_cache_sstable_row_skips</td>
+				<td>counter</td>
+				<td>number of times sstable reader was fast forwarded within a partition</td>
+				</tr>
+			
+
+				<tr>
+				<td>37</td>
+				<td class="metric">scylla_cache_static_row_insertions</td>
+				<td>counter</td>
+				<td>total number of static rows added to cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>38</td>
+				<td class="metric">scylla_cdc_operations_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>39</td>
+				<td class="metric">scylla_cdc_operations_on_clustering_row_performed_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations that processed a clustering_row</td>
+				</tr>
+			
+
+				<tr>
+				<td>40</td>
+				<td class="metric">scylla_cdc_operations_on_clustering_row_performed_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations that processed a clustering_row</td>
+				</tr>
+			
+
+				<tr>
+				<td>41</td>
+				<td class="metric">scylla_cdc_operations_on_list_performed_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations that processed a list</td>
+				</tr>
+			
+
+				<tr>
+				<td>42</td>
+				<td class="metric">scylla_cdc_operations_on_list_performed_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations that processed a list</td>
+				</tr>
+			
+
+				<tr>
+				<td>43</td>
+				<td class="metric">scylla_cdc_operations_on_map_performed_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations that processed a map</td>
+				</tr>
+			
+
+				<tr>
+				<td>44</td>
+				<td class="metric">scylla_cdc_operations_on_map_performed_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations that processed a map</td>
+				</tr>
+			
+
+				<tr>
+				<td>45</td>
+				<td class="metric">scylla_cdc_operations_on_partition_delete_performed_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations that processed a partition_delete</td>
+				</tr>
+			
+
+				<tr>
+				<td>46</td>
+				<td class="metric">scylla_cdc_operations_on_partition_delete_performed_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations that processed a partition_delete</td>
+				</tr>
+			
+
+				<tr>
+				<td>47</td>
+				<td class="metric">scylla_cdc_operations_on_range_tombstone_performed_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations that processed a range_tombstone</td>
+				</tr>
+			
+
+				<tr>
+				<td>48</td>
+				<td class="metric">scylla_cdc_operations_on_range_tombstone_performed_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations that processed a range_tombstone</td>
+				</tr>
+			
+
+				<tr>
+				<td>49</td>
+				<td class="metric">scylla_cdc_operations_on_row_delete_performed_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations that processed a row_delete</td>
+				</tr>
+			
+
+				<tr>
+				<td>50</td>
+				<td class="metric">scylla_cdc_operations_on_row_delete_performed_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations that processed a row_delete</td>
+				</tr>
+			
+
+				<tr>
+				<td>51</td>
+				<td class="metric">scylla_cdc_operations_on_set_performed_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations that processed a set</td>
+				</tr>
+			
+
+				<tr>
+				<td>52</td>
+				<td class="metric">scylla_cdc_operations_on_set_performed_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations that processed a set</td>
+				</tr>
+			
+
+				<tr>
+				<td>53</td>
+				<td class="metric">scylla_cdc_operations_on_static_row_performed_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations that processed a static_row</td>
+				</tr>
+			
+
+				<tr>
+				<td>54</td>
+				<td class="metric">scylla_cdc_operations_on_static_row_performed_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations that processed a static_row</td>
+				</tr>
+			
+
+				<tr>
+				<td>55</td>
+				<td class="metric">scylla_cdc_operations_on_udt_performed_failed</td>
+				<td>counter</td>
+				<td>number of failed CDC operations that processed a udt</td>
+				</tr>
+			
+
+				<tr>
+				<td>56</td>
+				<td class="metric">scylla_cdc_operations_on_udt_performed_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations that processed a udt</td>
+				</tr>
+			
+
+				<tr>
+				<td>57</td>
+				<td class="metric">scylla_cdc_operations_total</td>
+				<td>counter</td>
+				<td>number of total CDC operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>58</td>
+				<td class="metric">scylla_cdc_operations_with_postimage_failed</td>
+				<td>counter</td>
+				<td>number of failed operations that included postimage</td>
+				</tr>
+			
+
+				<tr>
+				<td>59</td>
+				<td class="metric">scylla_cdc_operations_with_postimage_total</td>
+				<td>counter</td>
+				<td>number of total operations that included postimage</td>
+				</tr>
+			
+
+				<tr>
+				<td>60</td>
+				<td class="metric">scylla_cdc_operations_with_preimage_failed</td>
+				<td>counter</td>
+				<td>number of failed operations that included preimage</td>
+				</tr>
+			
+
+				<tr>
+				<td>61</td>
+				<td class="metric">scylla_cdc_operations_with_preimage_total</td>
+				<td>counter</td>
+				<td>number of total operations that included preimage</td>
+				</tr>
+			
+
+				<tr>
+				<td>62</td>
+				<td class="metric">scylla_cdc_preimage_selects_failed</td>
+				<td>counter</td>
+				<td>number of failed preimage queries performed</td>
+				</tr>
+			
+
+				<tr>
+				<td>63</td>
+				<td class="metric">scylla_cdc_preimage_selects_total</td>
+				<td>counter</td>
+				<td>number of total preimage queries performed</td>
+				</tr>
+			
+
+				<tr>
+				<td>64</td>
+				<td class="metric">scylla_commitlog_active_allocations</td>
+				<td>gauge</td>
+				<td>Current number of active allocations.</td>
+				</tr>
+			
+
+				<tr>
+				<td>65</td>
+				<td class="metric">scylla_commitlog_alloc</td>
+				<td>counter</td>
+				<td>Counts number of times a new mutation has been added to a segment. Divide bytes_written by this value to get the average number of bytes per mutation written to the disk.</td>
+				</tr>
+			
+
+				<tr>
+				<td>66</td>
+				<td class="metric">scylla_commitlog_allocating_segments</td>
+				<td>gauge</td>
+				<td>Holds the number of not closed segments that still have some free space. This value should not get too high.</td>
+				</tr>
+			
+
+				<tr>
+				<td>67</td>
+				<td class="metric">scylla_commitlog_blocked_on_new_segment</td>
+				<td>gauge</td>
+				<td>Number of allocations blocked on acquiring new segment.</td>
+				</tr>
+			
+
+				<tr>
+				<td>68</td>
+				<td class="metric">scylla_commitlog_bytes_flush_requested</td>
+				<td>counter</td>
+				<td>Counts number of bytes requested to be flushed (persisted).</td>
+				</tr>
+			
+
+				<tr>
+				<td>69</td>
+				<td class="metric">scylla_commitlog_bytes_released</td>
+				<td>counter</td>
+				<td>Counts number of bytes released from disk. (Deleted/recycled)</td>
+				</tr>
+			
+
+				<tr>
+				<td>70</td>
+				<td class="metric">scylla_commitlog_bytes_written</td>
+				<td>counter</td>
+				<td>Counts number of bytes written to the disk. Divide this value by "alloc" to get the average number of bytes per mutation written to the disk.</td>
+				</tr>
+			
+
+				<tr>
+				<td>71</td>
+				<td class="metric">scylla_commitlog_cycle</td>
+				<td>counter</td>
+				<td>Counts number of commitlog write cycles - when the data is written from the internal memory buffer to the disk.</td>
+				</tr>
+			
+
+				<tr>
+				<td>72</td>
+				<td class="metric">scylla_commitlog_disk_active_bytes</td>
+				<td>gauge</td>
+				<td>Holds size of disk space in bytes used for data so far. A too high value indicates that we have some bottleneck in the writing to sstables path.</td>
+				</tr>
+			
+
+				<tr>
+				<td>73</td>
+				<td class="metric">scylla_commitlog_disk_slack_end_bytes</td>
+				<td>gauge</td>
+				<td>Holds size of disk space in bytes unused because of segment switching (end slack). A too high value indicates that we do not write enough data to each segment.</td>
+				</tr>
+			
+
+				<tr>
+				<td>74</td>
+				<td class="metric">scylla_commitlog_disk_total_bytes</td>
+				<td>gauge</td>
+				<td>Holds size of disk space in bytes reserved for data so far. A too high value indicates that we have some bottleneck in the writing to sstables path.</td>
+				</tr>
+			
+
+				<tr>
+				<td>75</td>
+				<td class="metric">scylla_commitlog_flush</td>
+				<td>counter</td>
+				<td>Counts number of times the flush() method was called for a file.</td>
+				</tr>
+			
+
+				<tr>
+				<td>76</td>
+				<td class="metric">scylla_commitlog_flush_limit_exceeded</td>
+				<td>counter</td>
+				<td>Counts number of times a flush limit was exceeded. A non-zero value indicates that there are too many pending flush operations (see pending_flushes) and some of them will be blocked till the total amount of pending flush operations drops below 5.</td>
+				</tr>
+			
+
+				<tr>
+				<td>77</td>
+				<td class="metric">scylla_commitlog_memory_buffer_bytes</td>
+				<td>gauge</td>
+				<td>Holds the total number of bytes in internal memory buffers.</td>
+				</tr>
+			
+
+				<tr>
+				<td>78</td>
+				<td class="metric">scylla_commitlog_pending_allocations</td>
+				<td>gauge</td>
+				<td>Holds number of currently pending allocations. A non-zero value indicates that we have a bottleneck in the disk write flow.</td>
+				</tr>
+			
+
+				<tr>
+				<td>79</td>
+				<td class="metric">scylla_commitlog_pending_flushes</td>
+				<td>gauge</td>
+				<td>Holds number of currently pending flushes. See the related flush_limit_exceeded metric.</td>
+				</tr>
+			
+
+				<tr>
+				<td>80</td>
+				<td class="metric">scylla_commitlog_requests_blocked_memory</td>
+				<td>counter</td>
+				<td>Counts number of requests blocked due to memory pressure. A non-zero value indicates that the commitlog memory quota is not enough to serve the required amount of requests.</td>
+				</tr>
+			
+
+				<tr>
+				<td>81</td>
+				<td class="metric">scylla_commitlog_segments</td>
+				<td>gauge</td>
+				<td>Holds the current number of segments.</td>
+				</tr>
+			
+
+				<tr>
+				<td>82</td>
+				<td class="metric">scylla_commitlog_slack</td>
+				<td>counter</td>
+				<td>Counts number of unused bytes written to the disk due to disk segment alignment.</td>
+				</tr>
+			
+
+				<tr>
+				<td>83</td>
+				<td class="metric">scylla_commitlog_unused_segments</td>
+				<td>gauge</td>
+				<td>Holds the current number of unused segments. A non-zero value indicates that the disk write path became temporary slow.</td>
+				</tr>
+			
+
+				<tr>
+				<td>84</td>
+				<td class="metric">scylla_compaction_manager_backlog</td>
+				<td>gauge</td>
+				<td>Holds the sum of compaction backlog for all tables in the system.</td>
+				</tr>
+			
+
+				<tr>
+				<td>85</td>
+				<td class="metric">scylla_compaction_manager_compactions</td>
+				<td>gauge</td>
+				<td>Holds the number of currently active compactions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>86</td>
+				<td class="metric">scylla_compaction_manager_completed_compactions</td>
+				<td>counter</td>
+				<td>Holds the number of completed compaction tasks.</td>
+				</tr>
+			
+
+				<tr>
+				<td>87</td>
+				<td class="metric">scylla_compaction_manager_failed_compactions</td>
+				<td>counter</td>
+				<td>Holds the number of failed compaction tasks.</td>
+				</tr>
+			
+
+				<tr>
+				<td>88</td>
+				<td class="metric">scylla_compaction_manager_normalized_backlog</td>
+				<td>gauge</td>
+				<td>Holds the sum of normalized compaction backlog for all tables in the system. Backlog is normalized by dividing backlog by shard's available memory.</td>
+				</tr>
+			
+
+				<tr>
+				<td>89</td>
+				<td class="metric">scylla_compaction_manager_pending_compactions</td>
+				<td>gauge</td>
+				<td>Holds the number of compaction tasks waiting for an opportunity to run.</td>
+				</tr>
+			
+
+				<tr>
+				<td>90</td>
+				<td class="metric">scylla_compaction_manager_postponed_compactions</td>
+				<td>gauge</td>
+				<td>Holds the number of tables with postponed compaction.</td>
+				</tr>
+			
+
+				<tr>
+				<td>91</td>
+				<td class="metric">scylla_compaction_manager_validation_errors</td>
+				<td>counter</td>
+				<td>Holds the number of encountered validation errors.</td>
+				</tr>
+			
+
+				<tr>
+				<td>92</td>
+				<td class="metric">scylla_cql_authorized_prepared_statements_cache_evictions</td>
+				<td>counter</td>
+				<td>Counts the number of authenticated prepared statements cache entries evictions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>93</td>
+				<td class="metric">scylla_cql_authorized_prepared_statements_cache_size</td>
+				<td>gauge</td>
+				<td>Number of entries in the authenticated prepared statements cache.</td>
+				</tr>
+			
+
+				<tr>
+				<td>94</td>
+				<td class="metric">scylla_cql_authorized_prepared_statements_unprivileged_entries_evictions_on_size</td>
+				<td>counter</td>
+				<td>Counts a number of evictions of prepared statements from the authorized prepared statements cache after they have been used only once. An increasing counter suggests the user may be preparing a different statement for each request instead of reusing the same prepared statement with parameters.</td>
+				</tr>
+			
+
+				<tr>
+				<td>95</td>
+				<td class="metric">scylla_cql_batches</td>
+				<td>counter</td>
+				<td>Counts the total number of CQL BATCH requests without conditions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>96</td>
+				<td class="metric">scylla_cql_batches_pure_logged</td>
+				<td>counter</td>
+				<td>Counts the total number of LOGGED batches that were executed as LOGGED batches.</td>
+				</tr>
+			
+
+				<tr>
+				<td>97</td>
+				<td class="metric">scylla_cql_batches_pure_unlogged</td>
+				<td>counter</td>
+				<td>Counts the total number of UNLOGGED batches that were executed as UNLOGGED batches.</td>
+				</tr>
+			
+
+				<tr>
+				<td>98</td>
+				<td class="metric">scylla_cql_batches_unlogged_from_logged</td>
+				<td>counter</td>
+				<td>Counts the total number of LOGGED batches that were executed as UNLOGGED batches.</td>
+				</tr>
+			
+
+				<tr>
+				<td>99</td>
+				<td class="metric">scylla_cql_deletes</td>
+				<td>counter</td>
+				<td>Counts the total number of CQL DELETE requests with/without conditions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>100</td>
+				<td class="metric">scylla_cql_deletes_per_ks</td>
+				<td>counter</td>
+				<td>Counts the number of CQL DELETE requests executed on particular keyspaces. Label `who' indicates where the reqs come from (clients or DB internals)</td>
+				</tr>
+			
+
+				<tr>
+				<td>101</td>
+				<td class="metric">scylla_cql_filtered_read_requests</td>
+				<td>counter</td>
+				<td>Counts the total number of CQL read requests that required ALLOW FILTERING. See filtered_rows_read_total to compare how many rows needed to be filtered.</td>
+				</tr>
+			
+
+				<tr>
+				<td>102</td>
+				<td class="metric">scylla_cql_filtered_rows_dropped_total</td>
+				<td>counter</td>
+				<td>Counts the number of rows read during CQL requests that required ALLOW FILTERING and dropped by the filter. Number similar to filtered_rows_read_total indicates that filtering is not accurate and might cause performance degradation.</td>
+				</tr>
+			
+
+				<tr>
+				<td>103</td>
+				<td class="metric">scylla_cql_filtered_rows_matched_total</td>
+				<td>counter</td>
+				<td>Counts the number of rows read during CQL requests that required ALLOW FILTERING and accepted by the filter. Number similar to filtered_rows_read_total indicates that filtering is accurate.</td>
+				</tr>
+			
+
+				<tr>
+				<td>104</td>
+				<td class="metric">scylla_cql_filtered_rows_read_total</td>
+				<td>counter</td>
+				<td>Counts the total number of rows read during CQL requests that required ALLOW FILTERING. See filtered_rows_matched_total and filtered_rows_dropped_total for information how accurate filtering queries are.</td>
+				</tr>
+			
+
+				<tr>
+				<td>105</td>
+				<td class="metric">scylla_cql_inserts</td>
+				<td>counter</td>
+				<td>Counts the total number of CQL INSERT requests with/without conditions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>106</td>
+				<td class="metric">scylla_cql_inserts_per_ks</td>
+				<td>counter</td>
+				<td>Counts the number of CQL INSERT requests executed on particular keyspaces. Label `who' indicates where the reqs come from (clients or DB internals).</td>
+				</tr>
+			
+
+				<tr>
+				<td>107</td>
+				<td class="metric">scylla_cql_prepared_cache_evictions</td>
+				<td>counter</td>
+				<td>Counts the number of prepared statements cache entries evictions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>108</td>
+				<td class="metric">scylla_cql_prepared_cache_memory_footprint</td>
+				<td>gauge</td>
+				<td>Size (in bytes) of the prepared statements cache.</td>
+				</tr>
+			
+
+				<tr>
+				<td>109</td>
+				<td class="metric">scylla_cql_prepared_cache_size</td>
+				<td>gauge</td>
+				<td>A number of entries in the prepared statements cache.</td>
+				</tr>
+			
+
+				<tr>
+				<td>110</td>
+				<td class="metric">scylla_cql_reads</td>
+				<td>counter</td>
+				<td>Counts the total number of CQL SELECT requests.</td>
+				</tr>
+			
+
+				<tr>
+				<td>111</td>
+				<td class="metric">scylla_cql_reads_per_ks</td>
+				<td>counter</td>
+				<td>Counts the number of CQL SELECT requests executed on particular keyspaces. Label `who' indicates where the reqs come from (clients or DB internals)</td>
+				</tr>
+			
+
+				<tr>
+				<td>112</td>
+				<td class="metric">scylla_cql_reverse_queries</td>
+				<td>counter</td>
+				<td>Counts the number of CQL SELECT requests with reverse ORDER BY order.</td>
+				</tr>
+			
+
+				<tr>
+				<td>113</td>
+				<td class="metric">scylla_cql_rows_read</td>
+				<td>counter</td>
+				<td>Counts the total number of rows read during CQL requests.</td>
+				</tr>
+			
+
+				<tr>
+				<td>114</td>
+				<td class="metric">scylla_cql_secondary_index_creates</td>
+				<td>counter</td>
+				<td>Counts the total number of CQL CREATE INDEX requests.</td>
+				</tr>
+			
+
+				<tr>
+				<td>115</td>
+				<td class="metric">scylla_cql_secondary_index_drops</td>
+				<td>counter</td>
+				<td>Counts the total number of CQL DROP INDEX requests.</td>
+				</tr>
+			
+
+				<tr>
+				<td>116</td>
+				<td class="metric">scylla_cql_secondary_index_reads</td>
+				<td>counter</td>
+				<td>Counts the total number of CQL read requests performed using secondary indexes.</td>
+				</tr>
+			
+
+				<tr>
+				<td>117</td>
+				<td class="metric">scylla_cql_secondary_index_rows_read</td>
+				<td>counter</td>
+				<td>Counts the total number of rows read during CQL requests performed using secondary indexes.</td>
+				</tr>
+			
+
+				<tr>
+				<td>118</td>
+				<td class="metric">scylla_cql_select_allow_filtering</td>
+				<td>counter</td>
+				<td>Counts the number of SELECT query executions with ALLOW FILTERING option.</td>
+				</tr>
+			
+
+				<tr>
+				<td>119</td>
+				<td class="metric">scylla_cql_select_bypass_caches</td>
+				<td>counter</td>
+				<td>Counts the number of SELECT query executions with BYPASS CACHE option.</td>
+				</tr>
+			
+
+				<tr>
+				<td>120</td>
+				<td class="metric">scylla_cql_select_parallelized</td>
+				<td>counter</td>
+				<td>Counts the number of parallelized aggregation SELECT query executions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>121</td>
+				<td class="metric">scylla_cql_select_partition_range_scan</td>
+				<td>counter</td>
+				<td>Counts the number of SELECT query executions requiring partition range scan.</td>
+				</tr>
+			
+
+				<tr>
+				<td>122</td>
+				<td class="metric">scylla_cql_select_partition_range_scan_no_bypass_cache</td>
+				<td>counter</td>
+				<td>Counts the number of SELECT query executions requiring partition range scan without BYPASS CACHE option.</td>
+				</tr>
+			
+
+				<tr>
+				<td>123</td>
+				<td class="metric">scylla_cql_statements_in_batches</td>
+				<td>counter</td>
+				<td>Counts the total number of sub-statements in CQL BATCH requests without conditions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>124</td>
+				<td class="metric">scylla_cql_unpaged_select_queries</td>
+				<td>counter</td>
+				<td>Counts the total number of unpaged CQL SELECT requests.</td>
+				</tr>
+			
+
+				<tr>
+				<td>125</td>
+				<td class="metric">scylla_cql_unpaged_select_queries_per_ks</td>
+				<td>counter</td>
+				<td>Counts the number of unpaged CQL SELECT requests against particular keyspaces.</td>
+				</tr>
+			
+
+				<tr>
+				<td>126</td>
+				<td class="metric">scylla_cql_unprivileged_entries_evictions_on_size</td>
+				<td>counter</td>
+				<td>Counts a number of evictions of prepared statements from the prepared statements cache after they have been used only once. An increasing counter suggests the user may be preparing a different statement for each request instead of reusing the same prepared statement with parameters.</td>
+				</tr>
+			
+
+				<tr>
+				<td>127</td>
+				<td class="metric">scylla_cql_updates</td>
+				<td>counter</td>
+				<td>Counts the total number of CQL UPDATE requests with/without conditions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>128</td>
+				<td class="metric">scylla_cql_updates_per_ks</td>
+				<td>counter</td>
+				<td>Counts the number of CQL UPDATE requests executed on particular keyspaces. Label `who' indicates where the reqs come from (clients or DB internals)</td>
+				</tr>
+			
+
+				<tr>
+				<td>129</td>
+				<td class="metric">scylla_cql_user_prepared_auth_cache_footprint</td>
+				<td>gauge</td>
+				<td>Size (in bytes) of the authenticated prepared statements cache.</td>
+				</tr>
+			
+
+				<tr>
+				<td>130</td>
+				<td class="metric">scylla_database_active_reads</td>
+				<td>gauge</td>
+				<td>Holds the number of currently active read operations. </td>
+				</tr>
+			
+
+				<tr>
+				<td>131</td>
+				<td class="metric">scylla_database_active_reads_memory_consumption</td>
+				<td>gauge</td>
+				<td>Holds the amount of memory consumed by currently active read operations. If this value gets close to 36700160 we are likely to start dropping new read requests. In that case sstable_read_queue_overloads is going to get a non-zero value.</td>
+				</tr>
+			
+
+				<tr>
+				<td>132</td>
+				<td class="metric">scylla_database_clustering_filter_count</td>
+				<td>counter</td>
+				<td>Counts bloom filter invocations.</td>
+				</tr>
+			
+
+				<tr>
+				<td>133</td>
+				<td class="metric">scylla_database_clustering_filter_fast_path_count</td>
+				<td>counter</td>
+				<td>Counts number of times bloom filtering short cut to include all sstables when only one full range was specified.</td>
+				</tr>
+			
+
+				<tr>
+				<td>134</td>
+				<td class="metric">scylla_database_clustering_filter_sstables_checked</td>
+				<td>counter</td>
+				<td>Counts sstables checked after applying the bloom filter. High value indicates that bloom filter is not very efficient.</td>
+				</tr>
+			
+
+				<tr>
+				<td>135</td>
+				<td class="metric">scylla_database_clustering_filter_surviving_sstables</td>
+				<td>counter</td>
+				<td>Counts sstables that survived the clustering key filtering. High value indicates that bloom filter is not very efficient and still have to access a lot of sstables to get data.</td>
+				</tr>
+			
+
+				<tr>
+				<td>136</td>
+				<td class="metric">scylla_database_counter_cell_lock_acquisition</td>
+				<td>counter</td>
+				<td>The number of acquired counter cell locks.</td>
+				</tr>
+			
+
+				<tr>
+				<td>137</td>
+				<td class="metric">scylla_database_counter_cell_lock_pending</td>
+				<td>gauge</td>
+				<td>The number of counter updates waiting for a lock.</td>
+				</tr>
+			
+
+				<tr>
+				<td>138</td>
+				<td class="metric">scylla_database_dropped_view_updates</td>
+				<td>counter</td>
+				<td>Counts the number of view updates that have been dropped due to cluster overload. </td>
+				</tr>
+			
+
+				<tr>
+				<td>139</td>
+				<td class="metric">scylla_database_large_partition_exceeding_threshold</td>
+				<td>counter</td>
+				<td>Number of large partitions exceeding compaction_large_partition_warning_threshold_mb. Large partitions have performance impact and should be avoided, check the documentation for details.</td>
+				</tr>
+			
+
+				<tr>
+				<td>140</td>
+				<td class="metric">scylla_database_multishard_query_failed_reader_saves</td>
+				<td>counter</td>
+				<td>The number of times the saving of a shard reader failed.</td>
+				</tr>
+			
+
+				<tr>
+				<td>141</td>
+				<td class="metric">scylla_database_multishard_query_failed_reader_stops</td>
+				<td>counter</td>
+				<td>The number of times the stopping of a shard reader failed.</td>
+				</tr>
+			
+
+				<tr>
+				<td>142</td>
+				<td class="metric">scylla_database_multishard_query_unpopped_bytes</td>
+				<td>counter</td>
+				<td>The total number of bytes that were extracted from the shard reader but were unconsumed by the query and moved back into the reader.</td>
+				</tr>
+			
+
+				<tr>
+				<td>143</td>
+				<td class="metric">scylla_database_multishard_query_unpopped_fragments</td>
+				<td>counter</td>
+				<td>The total number of fragments that were extracted from the shard reader but were unconsumed by the query and moved back into the reader.</td>
+				</tr>
+			
+
+				<tr>
+				<td>144</td>
+				<td class="metric">scylla_database_paused_reads</td>
+				<td>gauge</td>
+				<td>The number of currently active reads that are temporarily paused.</td>
+				</tr>
+			
+
+				<tr>
+				<td>145</td>
+				<td class="metric">scylla_database_paused_reads_permit_based_evictions</td>
+				<td>counter</td>
+				<td>The number of paused reads evicted to free up permits. Permits are required for new reads to start, and the database will evict paused reads (if any) to be able to admit new ones, if there is a shortage of permits.</td>
+				</tr>
+			
+
+				<tr>
+				<td>146</td>
+				<td class="metric">scylla_database_querier_cache_drops</td>
+				<td>counter</td>
+				<td>Counts querier cache lookups that found a cached querier but had to drop it due to position mismatch</td>
+				</tr>
+			
+
+				<tr>
+				<td>147</td>
+				<td class="metric">scylla_database_querier_cache_lookups</td>
+				<td>counter</td>
+				<td>Counts querier cache lookups (paging queries)</td>
+				</tr>
+			
+
+				<tr>
+				<td>148</td>
+				<td class="metric">scylla_database_querier_cache_misses</td>
+				<td>counter</td>
+				<td>Counts querier cache lookups that failed to find a cached querier</td>
+				</tr>
+			
+
+				<tr>
+				<td>149</td>
+				<td class="metric">scylla_database_querier_cache_population</td>
+				<td>gauge</td>
+				<td>The number of entries currently in the querier cache.</td>
+				</tr>
+			
+
+				<tr>
+				<td>150</td>
+				<td class="metric">scylla_database_querier_cache_resource_based_evictions</td>
+				<td>counter</td>
+				<td>Counts querier cache entries that were evicted to free up resources (limited by reader concurency limits) necessary to create new readers.</td>
+				</tr>
+			
+
+				<tr>
+				<td>151</td>
+				<td class="metric">scylla_database_querier_cache_time_based_evictions</td>
+				<td>counter</td>
+				<td>Counts querier cache entries that timed out and were evicted.</td>
+				</tr>
+			
+
+				<tr>
+				<td>152</td>
+				<td class="metric">scylla_database_queued_reads</td>
+				<td>gauge</td>
+				<td>Holds the number of currently queued read operations.</td>
+				</tr>
+			
+
+				<tr>
+				<td>153</td>
+				<td class="metric">scylla_database_reads_shed_due_to_overload</td>
+				<td>counter</td>
+				<td>The number of reads shed because the admission queue reached its max capacity. When the queue is full, excessive reads are shed to avoid overload.</td>
+				</tr>
+			
+
+				<tr>
+				<td>154</td>
+				<td class="metric">scylla_database_requests_blocked_memory</td>
+				<td>counter</td>
+				<td>Holds the current number of requests blocked due to reaching the memory quota (458752000B). Non-zero value indicates that our bottleneck is memory and more specifically - the memory quota allocated for the "database" component.</td>
+				</tr>
+			
+
+				<tr>
+				<td>155</td>
+				<td class="metric">scylla_database_requests_blocked_memory_current</td>
+				<td>gauge</td>
+				<td>Holds the current number of requests blocked due to reaching the memory quota (458752000B). Non-zero value indicates that our bottleneck is memory and more specifically - the memory quota allocated for the "database" component.</td>
+				</tr>
+			
+
+				<tr>
+				<td>156</td>
+				<td class="metric">scylla_database_schema_changed</td>
+				<td>counter</td>
+				<td>The number of times the schema changed</td>
+				</tr>
+			
+
+				<tr>
+				<td>157</td>
+				<td class="metric">scylla_database_short_data_queries</td>
+				<td>counter</td>
+				<td>The rate of data queries (data or digest reads) that returned less rows than requested due to result size limiting.</td>
+				</tr>
+			
+
+				<tr>
+				<td>158</td>
+				<td class="metric">scylla_database_short_mutation_queries</td>
+				<td>counter</td>
+				<td>The rate of mutation queries that returned less rows than requested due to result size limiting.</td>
+				</tr>
+			
+
+				<tr>
+				<td>159</td>
+				<td class="metric">scylla_database_sstable_read_queue_overloads</td>
+				<td>counter</td>
+				<td>Counts the number of times the sstable read queue was overloaded. A non-zero value indicates that we have to drop read requests because they arrive faster than we can serve them.</td>
+				</tr>
+			
+
+				<tr>
+				<td>160</td>
+				<td class="metric">scylla_database_total_reads</td>
+				<td>counter</td>
+				<td>Counts the total number of successful user reads on this shard.</td>
+				</tr>
+			
+
+				<tr>
+				<td>161</td>
+				<td class="metric">scylla_database_total_reads_failed</td>
+				<td>counter</td>
+				<td>Counts the total number of failed user read operations. Add the total_reads to this value to get the total amount of reads issued on this shard.</td>
+				</tr>
+			
+
+				<tr>
+				<td>162</td>
+				<td class="metric">scylla_database_total_reads_rate_limited</td>
+				<td>counter</td>
+				<td>Counts read operations which were rejected on the replica side because the per-partition limit was reached.</td>
+				</tr>
+			
+
+				<tr>
+				<td>163</td>
+				<td class="metric">scylla_database_total_result_bytes</td>
+				<td>gauge</td>
+				<td>Holds the current amount of memory used for results.</td>
+				</tr>
+			
+
+				<tr>
+				<td>164</td>
+				<td class="metric">scylla_database_total_view_updates_failed_local</td>
+				<td>counter</td>
+				<td>Total number of view updates generated for tables and failed to be applied locally.</td>
+				</tr>
+			
+
+				<tr>
+				<td>165</td>
+				<td class="metric">scylla_database_total_view_updates_failed_remote</td>
+				<td>counter</td>
+				<td>Total number of view updates generated for tables and failed to be sent to remote replicas.</td>
+				</tr>
+			
+
+				<tr>
+				<td>166</td>
+				<td class="metric">scylla_database_total_view_updates_pushed_local</td>
+				<td>counter</td>
+				<td>Total number of view updates generated for tables and applied locally.</td>
+				</tr>
+			
+
+				<tr>
+				<td>167</td>
+				<td class="metric">scylla_database_total_view_updates_pushed_remote</td>
+				<td>counter</td>
+				<td>Total number of view updates generated for tables and sent to remote replicas.</td>
+				</tr>
+			
+
+				<tr>
+				<td>168</td>
+				<td class="metric">scylla_database_total_writes</td>
+				<td>counter</td>
+				<td>Counts the total number of successful write operations performed by this shard.</td>
+				</tr>
+			
+
+				<tr>
+				<td>169</td>
+				<td class="metric">scylla_database_total_writes_failed</td>
+				<td>counter</td>
+				<td>Counts the total number of failed write operations. A sum of this value plus total_writes represents a total amount of writes attempted on this shard.</td>
+				</tr>
+			
+
+				<tr>
+				<td>170</td>
+				<td class="metric">scylla_database_total_writes_rate_limited</td>
+				<td>counter</td>
+				<td>Counts write operations which were rejected on the replica side because the per-partition limit was reached.</td>
+				</tr>
+			
+
+				<tr>
+				<td>171</td>
+				<td class="metric">scylla_database_total_writes_timedout</td>
+				<td>counter</td>
+				<td>Counts write operations failed due to a timeout. A positive value is a sign of storage being overloaded.</td>
+				</tr>
+			
+
+				<tr>
+				<td>172</td>
+				<td class="metric">scylla_database_view_building_paused</td>
+				<td>counter</td>
+				<td>Counts the number of times view building process was paused (e.g. due to node unavailability). </td>
+				</tr>
+			
+
+				<tr>
+				<td>173</td>
+				<td class="metric">scylla_database_view_update_backlog</td>
+				<td>gauge</td>
+				<td>Holds the current size in bytes of the pending view updates for all tables</td>
+				</tr>
+			
+
+				<tr>
+				<td>174</td>
+				<td class="metric">scylla_execution_stages_function_calls_enqueued</td>
+				<td>counter</td>
+				<td>Counts function calls added to execution stages queues</td>
+				</tr>
+			
+
+				<tr>
+				<td>175</td>
+				<td class="metric">scylla_execution_stages_function_calls_executed</td>
+				<td>counter</td>
+				<td>Counts function calls executed by execution stages</td>
+				</tr>
+			
+
+				<tr>
+				<td>176</td>
+				<td class="metric">scylla_execution_stages_tasks_preempted</td>
+				<td>counter</td>
+				<td>Counts tasks which were preempted before execution all queued operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>177</td>
+				<td class="metric">scylla_execution_stages_tasks_scheduled</td>
+				<td>counter</td>
+				<td>Counts tasks scheduled by execution stages</td>
+				</tr>
+			
+
+				<tr>
+				<td>178</td>
+				<td class="metric">scylla_forward_service_requests_dispatched_to_other_nodes</td>
+				<td>counter</td>
+				<td>how many forward requests were dispatched to other nodes</td>
+				</tr>
+			
+
+				<tr>
+				<td>179</td>
+				<td class="metric">scylla_forward_service_requests_dispatched_to_own_shards</td>
+				<td>counter</td>
+				<td>how many forward requests were dispatched to local shards</td>
+				</tr>
+			
+
+				<tr>
+				<td>180</td>
+				<td class="metric">scylla_forward_service_requests_executed</td>
+				<td>counter</td>
+				<td>how many forward requests were executed</td>
+				</tr>
+			
+
+				<tr>
+				<td>181</td>
+				<td class="metric">scylla_gossip_heart_beat</td>
+				<td>counter</td>
+				<td>Heartbeat of the current Node.</td>
+				</tr>
+			
+
+				<tr>
+				<td>182</td>
+				<td class="metric">scylla_gossip_live</td>
+				<td>gauge</td>
+				<td>How many live nodes the current node sees</td>
+				</tr>
+			
+
+				<tr>
+				<td>183</td>
+				<td class="metric">scylla_gossip_unreachable</td>
+				<td>gauge</td>
+				<td>How many unreachable nodes the current node sees</td>
+				</tr>
+			
+
+				<tr>
+				<td>184</td>
+				<td class="metric">scylla_hints_for_views_manager_corrupted_files</td>
+				<td>counter</td>
+				<td>Number of hints files that were discarded during sending because the file was corrupted.</td>
+				</tr>
+			
+
+				<tr>
+				<td>185</td>
+				<td class="metric">scylla_hints_for_views_manager_discarded</td>
+				<td>counter</td>
+				<td>Number of hints that were discarded during sending (too old, schema changed, etc.).</td>
+				</tr>
+			
+
+				<tr>
+				<td>186</td>
+				<td class="metric">scylla_hints_for_views_manager_dropped</td>
+				<td>counter</td>
+				<td>Number of dropped hints.</td>
+				</tr>
+			
+
+				<tr>
+				<td>187</td>
+				<td class="metric">scylla_hints_for_views_manager_errors</td>
+				<td>counter</td>
+				<td>Number of errors during hints writes.</td>
+				</tr>
+			
+
+				<tr>
+				<td>188</td>
+				<td class="metric">scylla_hints_for_views_manager_pending_drains</td>
+				<td>gauge</td>
+				<td>Number of tasks waiting in the queue for draining hints</td>
+				</tr>
+			
+
+				<tr>
+				<td>189</td>
+				<td class="metric">scylla_hints_for_views_manager_pending_sends</td>
+				<td>gauge</td>
+				<td>Number of tasks waiting in the queue for sending a hint</td>
+				</tr>
+			
+
+				<tr>
+				<td>190</td>
+				<td class="metric">scylla_hints_for_views_manager_sent</td>
+				<td>counter</td>
+				<td>Number of sent hints.</td>
+				</tr>
+			
+
+				<tr>
+				<td>191</td>
+				<td class="metric">scylla_hints_for_views_manager_size_of_hints_in_progress</td>
+				<td>gauge</td>
+				<td>Size of hinted mutations that are scheduled to be written.</td>
+				</tr>
+			
+
+				<tr>
+				<td>192</td>
+				<td class="metric">scylla_hints_for_views_manager_written</td>
+				<td>counter</td>
+				<td>Number of successfully written hints.</td>
+				</tr>
+			
+
+				<tr>
+				<td>193</td>
+				<td class="metric">scylla_hints_manager_corrupted_files</td>
+				<td>counter</td>
+				<td>Number of hints files that were discarded during sending because the file was corrupted.</td>
+				</tr>
+			
+
+				<tr>
+				<td>194</td>
+				<td class="metric">scylla_hints_manager_discarded</td>
+				<td>counter</td>
+				<td>Number of hints that were discarded during sending (too old, schema changed, etc.).</td>
+				</tr>
+			
+
+				<tr>
+				<td>195</td>
+				<td class="metric">scylla_hints_manager_dropped</td>
+				<td>counter</td>
+				<td>Number of dropped hints.</td>
+				</tr>
+			
+
+				<tr>
+				<td>196</td>
+				<td class="metric">scylla_hints_manager_errors</td>
+				<td>counter</td>
+				<td>Number of errors during hints writes.</td>
+				</tr>
+			
+
+				<tr>
+				<td>197</td>
+				<td class="metric">scylla_hints_manager_pending_drains</td>
+				<td>gauge</td>
+				<td>Number of tasks waiting in the queue for draining hints</td>
+				</tr>
+			
+
+				<tr>
+				<td>198</td>
+				<td class="metric">scylla_hints_manager_pending_sends</td>
+				<td>gauge</td>
+				<td>Number of tasks waiting in the queue for sending a hint</td>
+				</tr>
+			
+
+				<tr>
+				<td>199</td>
+				<td class="metric">scylla_hints_manager_sent</td>
+				<td>counter</td>
+				<td>Number of sent hints.</td>
+				</tr>
+			
+
+				<tr>
+				<td>200</td>
+				<td class="metric">scylla_hints_manager_size_of_hints_in_progress</td>
+				<td>gauge</td>
+				<td>Size of hinted mutations that are scheduled to be written.</td>
+				</tr>
+			
+
+				<tr>
+				<td>201</td>
+				<td class="metric">scylla_hints_manager_written</td>
+				<td>counter</td>
+				<td>Number of successfully written hints.</td>
+				</tr>
+			
+
+				<tr>
+				<td>202</td>
+				<td class="metric">scylla_httpd_connections_current</td>
+				<td>gauge</td>
+				<td>The current number of open  connections</td>
+				</tr>
+			
+
+				<tr>
+				<td>203</td>
+				<td class="metric">scylla_httpd_connections_total</td>
+				<td>counter</td>
+				<td>The total number of connections opened</td>
+				</tr>
+			
+
+				<tr>
+				<td>204</td>
+				<td class="metric">scylla_httpd_read_errors</td>
+				<td>counter</td>
+				<td>The total number of errors while reading http requests</td>
+				</tr>
+			
+
+				<tr>
+				<td>205</td>
+				<td class="metric">scylla_httpd_reply_errors</td>
+				<td>counter</td>
+				<td>The total number of errors while replying to http</td>
+				</tr>
+			
+
+				<tr>
+				<td>206</td>
+				<td class="metric">scylla_httpd_requests_served</td>
+				<td>counter</td>
+				<td>The total number of http requests served</td>
+				</tr>
+			
+
+				<tr>
+				<td>207</td>
+				<td class="metric">scylla_io_queue_adjusted_consumption</td>
+				<td>counter</td>
+				<td>Consumed disk capacity units adjusted for class shares and idling preemption</td>
+				</tr>
+			
+
+				<tr>
+				<td>208</td>
+				<td class="metric">scylla_io_queue_consumption</td>
+				<td>counter</td>
+				<td>Accumulated disk capacity units consumed by this class; an increment per-second rate indicates full utilization</td>
+				</tr>
+			
+
+				<tr>
+				<td>209</td>
+				<td class="metric">scylla_io_queue_delay</td>
+				<td>gauge</td>
+				<td>random delay time in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>210</td>
+				<td class="metric">scylla_io_queue_disk_queue_length</td>
+				<td>gauge</td>
+				<td>Number of requests in the disk</td>
+				</tr>
+			
+
+				<tr>
+				<td>211</td>
+				<td class="metric">scylla_io_queue_queue_length</td>
+				<td>gauge</td>
+				<td>Number of requests in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>212</td>
+				<td class="metric">scylla_io_queue_shares</td>
+				<td>gauge</td>
+				<td>current amount of shares</td>
+				</tr>
+			
+
+				<tr>
+				<td>213</td>
+				<td class="metric">scylla_io_queue_starvation_time_sec</td>
+				<td>counter</td>
+				<td>Total time spent starving for disk</td>
+				</tr>
+			
+
+				<tr>
+				<td>214</td>
+				<td class="metric">scylla_io_queue_total_bytes</td>
+				<td>counter</td>
+				<td>Total bytes passed in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>215</td>
+				<td class="metric">scylla_io_queue_total_delay_sec</td>
+				<td>counter</td>
+				<td>Total time spent in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>216</td>
+				<td class="metric">scylla_io_queue_total_exec_sec</td>
+				<td>counter</td>
+				<td>Total time spent in disk</td>
+				</tr>
+			
+
+				<tr>
+				<td>217</td>
+				<td class="metric">scylla_io_queue_total_operations</td>
+				<td>counter</td>
+				<td>Total operations passed in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>218</td>
+				<td class="metric">scylla_io_queue_total_read_bytes</td>
+				<td>counter</td>
+				<td>Total read bytes passed in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>219</td>
+				<td class="metric">scylla_io_queue_total_read_ops</td>
+				<td>counter</td>
+				<td>Total read operations passed in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>220</td>
+				<td class="metric">scylla_io_queue_total_split_bytes</td>
+				<td>counter</td>
+				<td>Total number of bytes split</td>
+				</tr>
+			
+
+				<tr>
+				<td>221</td>
+				<td class="metric">scylla_io_queue_total_split_ops</td>
+				<td>counter</td>
+				<td>Total number of requests split</td>
+				</tr>
+			
+
+				<tr>
+				<td>222</td>
+				<td class="metric">scylla_io_queue_total_write_bytes</td>
+				<td>counter</td>
+				<td>Total write bytes passed in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>223</td>
+				<td class="metric">scylla_io_queue_total_write_ops</td>
+				<td>counter</td>
+				<td>Total write operations passed in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>224</td>
+				<td class="metric">scylla_lsa_free_space</td>
+				<td>gauge</td>
+				<td>Holds a current amount of free memory that is under lsa control.</td>
+				</tr>
+			
+
+				<tr>
+				<td>225</td>
+				<td class="metric">scylla_lsa_large_objects_total_space_bytes</td>
+				<td>gauge</td>
+				<td>Holds a current size of allocated non-LSA memory.</td>
+				</tr>
+			
+
+				<tr>
+				<td>226</td>
+				<td class="metric">scylla_lsa_memory_allocated</td>
+				<td>counter</td>
+				<td>Counts number of bytes which were requested from LSA.</td>
+				</tr>
+			
+
+				<tr>
+				<td>227</td>
+				<td class="metric">scylla_lsa_memory_compacted</td>
+				<td>counter</td>
+				<td>Counts number of bytes which were copied as part of segment compaction.</td>
+				</tr>
+			
+
+				<tr>
+				<td>228</td>
+				<td class="metric">scylla_lsa_memory_evicted</td>
+				<td>counter</td>
+				<td>Counts number of bytes which were evicted.</td>
+				</tr>
+			
+
+				<tr>
+				<td>229</td>
+				<td class="metric">scylla_lsa_memory_freed</td>
+				<td>counter</td>
+				<td>Counts number of bytes which were requested to be freed in LSA.</td>
+				</tr>
+			
+
+				<tr>
+				<td>230</td>
+				<td class="metric">scylla_lsa_non_lsa_used_space_bytes</td>
+				<td>gauge</td>
+				<td>Holds a current amount of used non-LSA memory.</td>
+				</tr>
+			
+
+				<tr>
+				<td>231</td>
+				<td class="metric">scylla_lsa_occupancy</td>
+				<td>gauge</td>
+				<td>Holds a current portion (in percents) of the used memory.</td>
+				</tr>
+			
+
+				<tr>
+				<td>232</td>
+				<td class="metric">scylla_lsa_segments_compacted</td>
+				<td>counter</td>
+				<td>Counts a number of compacted segments.</td>
+				</tr>
+			
+
+				<tr>
+				<td>233</td>
+				<td class="metric">scylla_lsa_small_objects_total_space_bytes</td>
+				<td>gauge</td>
+				<td>Holds a current size of "small objects" memory region in bytes.</td>
+				</tr>
+			
+
+				<tr>
+				<td>234</td>
+				<td class="metric">scylla_lsa_small_objects_used_space_bytes</td>
+				<td>gauge</td>
+				<td>Holds a current amount of used "small objects" memory in bytes.</td>
+				</tr>
+			
+
+				<tr>
+				<td>235</td>
+				<td class="metric">scylla_lsa_total_space_bytes</td>
+				<td>gauge</td>
+				<td>Holds a current size of allocated memory in bytes.</td>
+				</tr>
+			
+
+				<tr>
+				<td>236</td>
+				<td class="metric">scylla_lsa_used_space_bytes</td>
+				<td>gauge</td>
+				<td>Holds a current amount of used memory in bytes.</td>
+				</tr>
+			
+
+				<tr>
+				<td>237</td>
+				<td class="metric">scylla_memory_allocated_memory</td>
+				<td>gauge</td>
+				<td>Allocated memory size in bytes</td>
+				</tr>
+			
+
+				<tr>
+				<td>238</td>
+				<td class="metric">scylla_memory_cross_cpu_free_operations</td>
+				<td>counter</td>
+				<td>Total number of cross cpu free</td>
+				</tr>
+			
+
+				<tr>
+				<td>239</td>
+				<td class="metric">scylla_memory_dirty_bytes</td>
+				<td>gauge</td>
+				<td>Holds the current size of all ("regular", "system" and "streaming") non-free memory in bytes: used memory + released memory that hasn't been returned to a free memory pool yet. Total memory size minus this value represents the amount of available memory. If this value minus virtual_dirty_bytes is too high then this means that the dirty memory eviction lags behind.</td>
+				</tr>
+			
+
+				<tr>
+				<td>240</td>
+				<td class="metric">scylla_memory_free_memory</td>
+				<td>gauge</td>
+				<td>Free memory size in bytes</td>
+				</tr>
+			
+
+				<tr>
+				<td>241</td>
+				<td class="metric">scylla_memory_free_operations</td>
+				<td>counter</td>
+				<td>Total number of free operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>242</td>
+				<td class="metric">scylla_memory_malloc_live_objects</td>
+				<td>gauge</td>
+				<td>Number of live objects</td>
+				</tr>
+			
+
+				<tr>
+				<td>243</td>
+				<td class="metric">scylla_memory_malloc_operations</td>
+				<td>counter</td>
+				<td>Total number of malloc operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>244</td>
+				<td class="metric">scylla_memory_reclaims_operations</td>
+				<td>counter</td>
+				<td>Total reclaims operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>245</td>
+				<td class="metric">scylla_memory_regular_dirty_bytes</td>
+				<td>gauge</td>
+				<td>Holds the current size of a all non-free memory in bytes: used memory + released memory that hasn't been returned to a free memory pool yet. Total memory size minus this value represents the amount of available memory. If this value minus virtual_dirty_bytes is too high then this means that the dirty memory eviction lags behind.</td>
+				</tr>
+			
+
+				<tr>
+				<td>246</td>
+				<td class="metric">scylla_memory_regular_virtual_dirty_bytes</td>
+				<td>gauge</td>
+				<td>Holds the size of used memory in bytes. Compare it to "dirty_bytes" to see how many memory is wasted (neither used nor available).</td>
+				</tr>
+			
+
+				<tr>
+				<td>247</td>
+				<td class="metric">scylla_memory_system_dirty_bytes</td>
+				<td>gauge</td>
+				<td>Holds the current size of a all non-free memory in bytes: used memory + released memory that hasn't been returned to a free memory pool yet. Total memory size minus this value represents the amount of available memory. If this value minus virtual_dirty_bytes is too high then this means that the dirty memory eviction lags behind.</td>
+				</tr>
+			
+
+				<tr>
+				<td>248</td>
+				<td class="metric">scylla_memory_system_virtual_dirty_bytes</td>
+				<td>gauge</td>
+				<td>Holds the size of used memory in bytes. Compare it to "dirty_bytes" to see how many memory is wasted (neither used nor available).</td>
+				</tr>
+			
+
+				<tr>
+				<td>249</td>
+				<td class="metric">scylla_memory_total_memory</td>
+				<td>gauge</td>
+				<td>Total memory size in bytes</td>
+				</tr>
+			
+
+				<tr>
+				<td>250</td>
+				<td class="metric">scylla_memory_virtual_dirty_bytes</td>
+				<td>gauge</td>
+				<td>Holds the size of all ("regular", "system" and "streaming") used memory in bytes. Compare it to "dirty_bytes" to see how many memory is wasted (neither used nor available).</td>
+				</tr>
+			
+
+				<tr>
+				<td>251</td>
+				<td class="metric">scylla_memtables_failed_flushes</td>
+				<td>gauge</td>
+				<td>Holds the number of failed memtable flushes. High value in this metric may indicate a permanent failure to flush a memtable.</td>
+				</tr>
+			
+
+				<tr>
+				<td>252</td>
+				<td class="metric">scylla_memtables_pending_flushes</td>
+				<td>gauge</td>
+				<td>Holds the current number of memtables that are currently being flushed to sstables. High value in this metric may be an indication of storage being a bottleneck.</td>
+				</tr>
+			
+
+				<tr>
+				<td>253</td>
+				<td class="metric">scylla_memtables_pending_flushes_bytes</td>
+				<td>gauge</td>
+				<td>Holds the current number of bytes in memtables that are currently being flushed to sstables. High value in this metric may be an indication of storage being a bottleneck.</td>
+				</tr>
+			
+
+				<tr>
+				<td>254</td>
+				<td class="metric">scylla_node_operation_mode</td>
+				<td>gauge</td>
+				<td>The operation mode of the current node. UNKNOWN = 0, STARTING = 1, JOINING = 2, NORMAL = 3, LEAVING = 4, DECOMMISSIONED = 5, DRAINING = 6, DRAINED = 7, MOVING = 8</td>
+				</tr>
+			
+
+				<tr>
+				<td>255</td>
+				<td class="metric">scylla_node_ops_finished_percentage</td>
+				<td>gauge</td>
+				<td>Finished percentage of node operation on this shard</td>
+				</tr>
+			
+
+				<tr>
+				<td>256</td>
+				<td class="metric">scylla_per_partition_rate_limiter_allocations</td>
+				<td>counter</td>
+				<td>Number of times a entry was allocated over an empty/expired entry.</td>
+				</tr>
+			
+
+				<tr>
+				<td>257</td>
+				<td class="metric">scylla_per_partition_rate_limiter_failed_allocations</td>
+				<td>counter</td>
+				<td>Number of times the rate limiter gave up trying to allocate.</td>
+				</tr>
+			
+
+				<tr>
+				<td>258</td>
+				<td class="metric">scylla_per_partition_rate_limiter_load_factor</td>
+				<td>gauge</td>
+				<td>Current load factor of the hash table (upper bound, may be overestimated).</td>
+				</tr>
+			
+
+				<tr>
+				<td>259</td>
+				<td class="metric">scylla_per_partition_rate_limiter_probe_count</td>
+				<td>counter</td>
+				<td>Number of probes made during lookups.</td>
+				</tr>
+			
+
+				<tr>
+				<td>260</td>
+				<td class="metric">scylla_per_partition_rate_limiter_successful_lookups</td>
+				<td>counter</td>
+				<td>Number of times a lookup returned an already allocated entry.</td>
+				</tr>
+			
+
+				<tr>
+				<td>261</td>
+				<td class="metric">scylla_query_processor_queries</td>
+				<td>counter</td>
+				<td>Counts queries by consistency level.</td>
+				</tr>
+			
+
+				<tr>
+				<td>262</td>
+				<td class="metric">scylla_query_processor_statements_prepared</td>
+				<td>counter</td>
+				<td>Counts the total number of parsed CQL requests.</td>
+				</tr>
+			
+
+				<tr>
+				<td>263</td>
+				<td class="metric">scylla_reactor_abandoned_failed_futures</td>
+				<td>counter</td>
+				<td>Total number of abandoned failed futures, futures destroyed while still containing an exception</td>
+				</tr>
+			
+
+				<tr>
+				<td>264</td>
+				<td class="metric">scylla_reactor_aio_bytes_read</td>
+				<td>counter</td>
+				<td>Total aio-reads bytes</td>
+				</tr>
+			
+
+				<tr>
+				<td>265</td>
+				<td class="metric">scylla_reactor_aio_bytes_write</td>
+				<td>counter</td>
+				<td>Total aio-writes bytes</td>
+				</tr>
+			
+
+				<tr>
+				<td>266</td>
+				<td class="metric">scylla_reactor_aio_errors</td>
+				<td>counter</td>
+				<td>Total aio errors</td>
+				</tr>
+			
+
+				<tr>
+				<td>267</td>
+				<td class="metric">scylla_reactor_aio_outsizes</td>
+				<td>counter</td>
+				<td>Total number of aio operations that exceed IO limit</td>
+				</tr>
+			
+
+				<tr>
+				<td>268</td>
+				<td class="metric">scylla_reactor_aio_reads</td>
+				<td>counter</td>
+				<td>Total aio-reads operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>269</td>
+				<td class="metric">scylla_reactor_aio_writes</td>
+				<td>counter</td>
+				<td>Total aio-writes operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>270</td>
+				<td class="metric">scylla_reactor_cpp_exceptions</td>
+				<td>counter</td>
+				<td>Total number of C++ exceptions</td>
+				</tr>
+			
+
+				<tr>
+				<td>271</td>
+				<td class="metric">scylla_reactor_cpu_busy_ms</td>
+				<td>counter</td>
+				<td>Total cpu busy time in milliseconds</td>
+				</tr>
+			
+
+				<tr>
+				<td>272</td>
+				<td class="metric">scylla_reactor_cpu_steal_time_ms</td>
+				<td>counter</td>
+				<td>Total steal time, the time in which some other process was running while Seastar was not trying to run (not sleeping).Because this is in userspace, some time that could be legitimally thought as steal time is not accounted as such. For example, if we are sleeping and can wake up but the kernel hasn't woken us up yet.</td>
+				</tr>
+			
+
+				<tr>
+				<td>273</td>
+				<td class="metric">scylla_reactor_fstream_read_bytes</td>
+				<td>counter</td>
+				<td>Counts bytes read from disk file streams.  A high rate indicates high disk activity. Divide by fstream_reads to determine average read size.</td>
+				</tr>
+			
+
+				<tr>
+				<td>274</td>
+				<td class="metric">scylla_reactor_fstream_read_bytes_blocked</td>
+				<td>counter</td>
+				<td>Counts the number of bytes read from disk that could not be satisfied from read-ahead buffers, and had to block. Indicates short streams, or incorrect read ahead configuration.</td>
+				</tr>
+			
+
+				<tr>
+				<td>275</td>
+				<td class="metric">scylla_reactor_fstream_reads</td>
+				<td>counter</td>
+				<td>Counts reads from disk file streams.  A high rate indicates high disk activity. Contrast with other fstream_read* counters to locate bottlenecks.</td>
+				</tr>
+			
+
+				<tr>
+				<td>276</td>
+				<td class="metric">scylla_reactor_fstream_reads_ahead_bytes_discarded</td>
+				<td>counter</td>
+				<td>Counts the number of buffered bytes that were read ahead of time and were discarded because they were not needed, wasting disk bandwidth. Indicates over-eager read ahead configuration.</td>
+				</tr>
+			
+
+				<tr>
+				<td>277</td>
+				<td class="metric">scylla_reactor_fstream_reads_aheads_discarded</td>
+				<td>counter</td>
+				<td>Counts the number of times a buffer that was read ahead of time and was discarded because it was not needed, wasting disk bandwidth. Indicates over-eager read ahead configuration.</td>
+				</tr>
+			
+
+				<tr>
+				<td>278</td>
+				<td class="metric">scylla_reactor_fstream_reads_blocked</td>
+				<td>counter</td>
+				<td>Counts the number of times a disk read could not be satisfied from read-ahead buffers, and had to block. Indicates short streams, or incorrect read ahead configuration.</td>
+				</tr>
+			
+
+				<tr>
+				<td>279</td>
+				<td class="metric">scylla_reactor_fsyncs</td>
+				<td>counter</td>
+				<td>Total number of fsync operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>280</td>
+				<td class="metric">scylla_reactor_io_threaded_fallbacks</td>
+				<td>counter</td>
+				<td>Total number of io-threaded-fallbacks operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>281</td>
+				<td class="metric">scylla_reactor_logging_failures</td>
+				<td>counter</td>
+				<td>Total number of logging failures</td>
+				</tr>
+			
+
+				<tr>
+				<td>282</td>
+				<td class="metric">scylla_reactor_polls</td>
+				<td>counter</td>
+				<td>Number of times pollers were executed</td>
+				</tr>
+			
+
+				<tr>
+				<td>283</td>
+				<td class="metric">scylla_reactor_tasks_pending</td>
+				<td>gauge</td>
+				<td>Number of pending tasks in the queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>284</td>
+				<td class="metric">scylla_reactor_tasks_processed</td>
+				<td>counter</td>
+				<td>Total tasks processed</td>
+				</tr>
+			
+
+				<tr>
+				<td>285</td>
+				<td class="metric">scylla_reactor_timers_pending</td>
+				<td>gauge</td>
+				<td>Number of tasks in the timer-pending queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>286</td>
+				<td class="metric">scylla_reactor_utilization</td>
+				<td>gauge</td>
+				<td>CPU utilization</td>
+				</tr>
+			
+
+				<tr>
+				<td>287</td>
+				<td class="metric">scylla_scheduler_queue_length</td>
+				<td>gauge</td>
+				<td>Size of backlog on this queue, in tasks; indicates whether the queue is busy and/or contended</td>
+				</tr>
+			
+
+				<tr>
+				<td>288</td>
+				<td class="metric">scylla_scheduler_runtime_ms</td>
+				<td>counter</td>
+				<td>Accumulated runtime of this task queue; an increment rate of 1000ms per second indicates full utilization</td>
+				</tr>
+			
+
+				<tr>
+				<td>289</td>
+				<td class="metric">scylla_scheduler_shares</td>
+				<td>gauge</td>
+				<td>Shares allocated to this queue</td>
+				</tr>
+			
+
+				<tr>
+				<td>290</td>
+				<td class="metric">scylla_scheduler_starvetime_ms</td>
+				<td>counter</td>
+				<td>Accumulated starvation time of this task queue; an increment rate of 1000ms per second indicates the scheduler feels really bad</td>
+				</tr>
+			
+
+				<tr>
+				<td>291</td>
+				<td class="metric">scylla_scheduler_tasks_processed</td>
+				<td>counter</td>
+				<td>Count of tasks executing on this queue; indicates together with runtime_ms indicates length of tasks</td>
+				</tr>
+			
+
+				<tr>
+				<td>292</td>
+				<td class="metric">scylla_scheduler_time_spent_on_task_quota_violations_ms</td>
+				<td>counter</td>
+				<td>Total amount in milliseconds we were in violation of the task quota</td>
+				</tr>
+			
+
+				<tr>
+				<td>293</td>
+				<td class="metric">scylla_scheduler_waittime_ms</td>
+				<td>counter</td>
+				<td>Accumulated waittime of this task queue; an increment rate of 1000ms per second indicates queue is waiting for something (e.g. IO)</td>
+				</tr>
+			
+
+				<tr>
+				<td>294</td>
+				<td class="metric">scylla_schema_commitlog_active_allocations</td>
+				<td>gauge</td>
+				<td>Current number of active allocations.</td>
+				</tr>
+			
+
+				<tr>
+				<td>295</td>
+				<td class="metric">scylla_schema_commitlog_alloc</td>
+				<td>counter</td>
+				<td>Counts number of times a new mutation has been added to a segment. Divide bytes_written by this value to get the average number of bytes per mutation written to the disk.</td>
+				</tr>
+			
+
+				<tr>
+				<td>296</td>
+				<td class="metric">scylla_schema_commitlog_allocating_segments</td>
+				<td>gauge</td>
+				<td>Holds the number of not closed segments that still have some free space. This value should not get too high.</td>
+				</tr>
+			
+
+				<tr>
+				<td>297</td>
+				<td class="metric">scylla_schema_commitlog_blocked_on_new_segment</td>
+				<td>gauge</td>
+				<td>Number of allocations blocked on acquiring new segment.</td>
+				</tr>
+			
+
+				<tr>
+				<td>298</td>
+				<td class="metric">scylla_schema_commitlog_bytes_flush_requested</td>
+				<td>counter</td>
+				<td>Counts number of bytes requested to be flushed (persisted).</td>
+				</tr>
+			
+
+				<tr>
+				<td>299</td>
+				<td class="metric">scylla_schema_commitlog_bytes_released</td>
+				<td>counter</td>
+				<td>Counts number of bytes released from disk. (Deleted/recycled)</td>
+				</tr>
+			
+
+				<tr>
+				<td>300</td>
+				<td class="metric">scylla_schema_commitlog_bytes_written</td>
+				<td>counter</td>
+				<td>Counts number of bytes written to the disk. Divide this value by "alloc" to get the average number of bytes per mutation written to the disk.</td>
+				</tr>
+			
+
+				<tr>
+				<td>301</td>
+				<td class="metric">scylla_schema_commitlog_cycle</td>
+				<td>counter</td>
+				<td>Counts number of commitlog write cycles - when the data is written from the internal memory buffer to the disk.</td>
+				</tr>
+			
+
+				<tr>
+				<td>302</td>
+				<td class="metric">scylla_schema_commitlog_disk_active_bytes</td>
+				<td>gauge</td>
+				<td>Holds size of disk space in bytes used for data so far. A too high value indicates that we have some bottleneck in the writing to sstables path.</td>
+				</tr>
+			
+
+				<tr>
+				<td>303</td>
+				<td class="metric">scylla_schema_commitlog_disk_slack_end_bytes</td>
+				<td>gauge</td>
+				<td>Holds size of disk space in bytes unused because of segment switching (end slack). A too high value indicates that we do not write enough data to each segment.</td>
+				</tr>
+			
+
+				<tr>
+				<td>304</td>
+				<td class="metric">scylla_schema_commitlog_disk_total_bytes</td>
+				<td>gauge</td>
+				<td>Holds size of disk space in bytes reserved for data so far. A too high value indicates that we have some bottleneck in the writing to sstables path.</td>
+				</tr>
+			
+
+				<tr>
+				<td>305</td>
+				<td class="metric">scylla_schema_commitlog_flush</td>
+				<td>counter</td>
+				<td>Counts number of times the flush() method was called for a file.</td>
+				</tr>
+			
+
+				<tr>
+				<td>306</td>
+				<td class="metric">scylla_schema_commitlog_flush_limit_exceeded</td>
+				<td>counter</td>
+				<td>Counts number of times a flush limit was exceeded. A non-zero value indicates that there are too many pending flush operations (see pending_flushes) and some of them will be blocked till the total amount of pending flush operations drops below 5.</td>
+				</tr>
+			
+
+				<tr>
+				<td>307</td>
+				<td class="metric">scylla_schema_commitlog_memory_buffer_bytes</td>
+				<td>gauge</td>
+				<td>Holds the total number of bytes in internal memory buffers.</td>
+				</tr>
+			
+
+				<tr>
+				<td>308</td>
+				<td class="metric">scylla_schema_commitlog_pending_allocations</td>
+				<td>gauge</td>
+				<td>Holds number of currently pending allocations. A non-zero value indicates that we have a bottleneck in the disk write flow.</td>
+				</tr>
+			
+
+				<tr>
+				<td>309</td>
+				<td class="metric">scylla_schema_commitlog_pending_flushes</td>
+				<td>gauge</td>
+				<td>Holds number of currently pending flushes. See the related flush_limit_exceeded metric.</td>
+				</tr>
+			
+
+				<tr>
+				<td>310</td>
+				<td class="metric">scylla_schema_commitlog_requests_blocked_memory</td>
+				<td>counter</td>
+				<td>Counts number of requests blocked due to memory pressure. A non-zero value indicates that the commitlog memory quota is not enough to serve the required amount of requests.</td>
+				</tr>
+			
+
+				<tr>
+				<td>311</td>
+				<td class="metric">scylla_schema_commitlog_segments</td>
+				<td>gauge</td>
+				<td>Holds the current number of segments.</td>
+				</tr>
+			
+
+				<tr>
+				<td>312</td>
+				<td class="metric">scylla_schema_commitlog_slack</td>
+				<td>counter</td>
+				<td>Counts number of unused bytes written to the disk due to disk segment alignment.</td>
+				</tr>
+			
+
+				<tr>
+				<td>313</td>
+				<td class="metric">scylla_schema_commitlog_unused_segments</td>
+				<td>gauge</td>
+				<td>Holds the current number of unused segments. A non-zero value indicates that the disk write path became temporary slow.</td>
+				</tr>
+			
+
+				<tr>
+				<td>314</td>
+				<td class="metric">scylla_scylladb_current_version</td>
+				<td>gauge</td>
+				<td>Current ScyllaDB version.</td>
+				</tr>
+			
+
+				<tr>
+				<td>315</td>
+				<td class="metric">scylla_sstables_bloom_filter_memory_size</td>
+				<td>gauge</td>
+				<td>Bloom filter memory usage in bytes.</td>
+				</tr>
+			
+
+				<tr>
+				<td>316</td>
+				<td class="metric">scylla_sstables_capped_local_deletion_time</td>
+				<td>counter</td>
+				<td>Was local deletion time capped at maximum allowed value in Statistics</td>
+				</tr>
+			
+
+				<tr>
+				<td>317</td>
+				<td class="metric">scylla_sstables_capped_tombstone_deletion_time</td>
+				<td>counter</td>
+				<td>Was partition tombstone deletion time capped at maximum allowed value</td>
+				</tr>
+			
+
+				<tr>
+				<td>318</td>
+				<td class="metric">scylla_sstables_cell_tombstone_writes</td>
+				<td>counter</td>
+				<td>Number of cell tombstones written</td>
+				</tr>
+			
+
+				<tr>
+				<td>319</td>
+				<td class="metric">scylla_sstables_cell_writes</td>
+				<td>counter</td>
+				<td>Number of cells written</td>
+				</tr>
+			
+
+				<tr>
+				<td>320</td>
+				<td class="metric">scylla_sstables_currently_open_for_reading</td>
+				<td>gauge</td>
+				<td>Number of sstables currently open for reading</td>
+				</tr>
+			
+
+				<tr>
+				<td>321</td>
+				<td class="metric">scylla_sstables_currently_open_for_writing</td>
+				<td>gauge</td>
+				<td>Number of sstables currently open for writing</td>
+				</tr>
+			
+
+				<tr>
+				<td>322</td>
+				<td class="metric">scylla_sstables_index_page_blocks</td>
+				<td>counter</td>
+				<td>Index page requests which needed to wait due to page not being loaded yet</td>
+				</tr>
+			
+
+				<tr>
+				<td>323</td>
+				<td class="metric">scylla_sstables_index_page_cache_bytes</td>
+				<td>gauge</td>
+				<td>Total number of bytes cached in the index page cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>324</td>
+				<td class="metric">scylla_sstables_index_page_cache_bytes_in_std</td>
+				<td>gauge</td>
+				<td>Total number of bytes in temporary buffers which live in the std allocator</td>
+				</tr>
+			
+
+				<tr>
+				<td>325</td>
+				<td class="metric">scylla_sstables_index_page_cache_evictions</td>
+				<td>counter</td>
+				<td>Total number of index page cache pages which have been evicted</td>
+				</tr>
+			
+
+				<tr>
+				<td>326</td>
+				<td class="metric">scylla_sstables_index_page_cache_hits</td>
+				<td>counter</td>
+				<td>Index page cache requests which were served from cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>327</td>
+				<td class="metric">scylla_sstables_index_page_cache_misses</td>
+				<td>counter</td>
+				<td>Index page cache requests which had to perform I/O</td>
+				</tr>
+			
+
+				<tr>
+				<td>328</td>
+				<td class="metric">scylla_sstables_index_page_cache_populations</td>
+				<td>counter</td>
+				<td>Total number of index page cache pages which were inserted into the cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>329</td>
+				<td class="metric">scylla_sstables_index_page_evictions</td>
+				<td>counter</td>
+				<td>Index pages which got evicted from memory</td>
+				</tr>
+			
+
+				<tr>
+				<td>330</td>
+				<td class="metric">scylla_sstables_index_page_hits</td>
+				<td>counter</td>
+				<td>Index page requests which could be satisfied without waiting</td>
+				</tr>
+			
+
+				<tr>
+				<td>331</td>
+				<td class="metric">scylla_sstables_index_page_misses</td>
+				<td>counter</td>
+				<td>Index page requests which initiated a read from disk</td>
+				</tr>
+			
+
+				<tr>
+				<td>332</td>
+				<td class="metric">scylla_sstables_index_page_populations</td>
+				<td>counter</td>
+				<td>Index pages which got populated into memory</td>
+				</tr>
+			
+
+				<tr>
+				<td>333</td>
+				<td class="metric">scylla_sstables_index_page_used_bytes</td>
+				<td>gauge</td>
+				<td>Amount of bytes used by index pages in memory</td>
+				</tr>
+			
+
+				<tr>
+				<td>334</td>
+				<td class="metric">scylla_sstables_partition_reads</td>
+				<td>counter</td>
+				<td>Number of partitions read</td>
+				</tr>
+			
+
+				<tr>
+				<td>335</td>
+				<td class="metric">scylla_sstables_partition_seeks</td>
+				<td>counter</td>
+				<td>Number of partitions seeked</td>
+				</tr>
+			
+
+				<tr>
+				<td>336</td>
+				<td class="metric">scylla_sstables_partition_writes</td>
+				<td>counter</td>
+				<td>Number of partitions written</td>
+				</tr>
+			
+
+				<tr>
+				<td>337</td>
+				<td class="metric">scylla_sstables_pi_auto_scale_events</td>
+				<td>counter</td>
+				<td>Number of promoted index auto-scaling events</td>
+				</tr>
+			
+
+				<tr>
+				<td>338</td>
+				<td class="metric">scylla_sstables_pi_cache_block_count</td>
+				<td>gauge</td>
+				<td>Number of promoted index blocks currently cached</td>
+				</tr>
+			
+
+				<tr>
+				<td>339</td>
+				<td class="metric">scylla_sstables_pi_cache_bytes</td>
+				<td>gauge</td>
+				<td>Number of bytes currently used by cached promoted index blocks</td>
+				</tr>
+			
+
+				<tr>
+				<td>340</td>
+				<td class="metric">scylla_sstables_pi_cache_evictions</td>
+				<td>counter</td>
+				<td>Number of promoted index blocks which got evicted</td>
+				</tr>
+			
+
+				<tr>
+				<td>341</td>
+				<td class="metric">scylla_sstables_pi_cache_hits_l0</td>
+				<td>counter</td>
+				<td>Number of requests for promoted index block in state l0 which didn't have to go to the page cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>342</td>
+				<td class="metric">scylla_sstables_pi_cache_hits_l1</td>
+				<td>counter</td>
+				<td>Number of requests for promoted index block in state l1 which didn't have to go to the page cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>343</td>
+				<td class="metric">scylla_sstables_pi_cache_hits_l2</td>
+				<td>counter</td>
+				<td>Number of requests for promoted index block in state l2 which didn't have to go to the page cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>344</td>
+				<td class="metric">scylla_sstables_pi_cache_misses_l0</td>
+				<td>counter</td>
+				<td>Number of requests for promoted index block in state l0 which had to go to the page cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>345</td>
+				<td class="metric">scylla_sstables_pi_cache_misses_l1</td>
+				<td>counter</td>
+				<td>Number of requests for promoted index block in state l1 which had to go to the page cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>346</td>
+				<td class="metric">scylla_sstables_pi_cache_misses_l2</td>
+				<td>counter</td>
+				<td>Number of requests for promoted index block in state l2 which had to go to the page cache</td>
+				</tr>
+			
+
+				<tr>
+				<td>347</td>
+				<td class="metric">scylla_sstables_pi_cache_populations</td>
+				<td>counter</td>
+				<td>Number of promoted index blocks which got inserted</td>
+				</tr>
+			
+
+				<tr>
+				<td>348</td>
+				<td class="metric">scylla_sstables_range_partition_reads</td>
+				<td>counter</td>
+				<td>Number of partition range flat mutation reads</td>
+				</tr>
+			
+
+				<tr>
+				<td>349</td>
+				<td class="metric">scylla_sstables_range_tombstone_reads</td>
+				<td>counter</td>
+				<td>Number of range tombstones read</td>
+				</tr>
+			
+
+				<tr>
+				<td>350</td>
+				<td class="metric">scylla_sstables_range_tombstone_writes</td>
+				<td>counter</td>
+				<td>Number of range tombstones written</td>
+				</tr>
+			
+
+				<tr>
+				<td>351</td>
+				<td class="metric">scylla_sstables_row_reads</td>
+				<td>counter</td>
+				<td>Number of rows read</td>
+				</tr>
+			
+
+				<tr>
+				<td>352</td>
+				<td class="metric">scylla_sstables_row_tombstone_reads</td>
+				<td>counter</td>
+				<td>Number of row tombstones read</td>
+				</tr>
+			
+
+				<tr>
+				<td>353</td>
+				<td class="metric">scylla_sstables_row_writes</td>
+				<td>counter</td>
+				<td>Number of clustering rows written</td>
+				</tr>
+			
+
+				<tr>
+				<td>354</td>
+				<td class="metric">scylla_sstables_single_partition_reads</td>
+				<td>counter</td>
+				<td>Number of single partition flat mutation reads</td>
+				</tr>
+			
+
+				<tr>
+				<td>355</td>
+				<td class="metric">scylla_sstables_static_row_writes</td>
+				<td>counter</td>
+				<td>Number of static rows written</td>
+				</tr>
+			
+
+				<tr>
+				<td>356</td>
+				<td class="metric">scylla_sstables_tombstone_writes</td>
+				<td>counter</td>
+				<td>Number of tombstones written</td>
+				</tr>
+			
+
+				<tr>
+				<td>357</td>
+				<td class="metric">scylla_sstables_total_deleted</td>
+				<td>counter</td>
+				<td>Counter of deleted sstables</td>
+				</tr>
+			
+
+				<tr>
+				<td>358</td>
+				<td class="metric">scylla_sstables_total_open_for_reading</td>
+				<td>counter</td>
+				<td>Counter of sstables open for reading</td>
+				</tr>
+			
+
+				<tr>
+				<td>359</td>
+				<td class="metric">scylla_sstables_total_open_for_writing</td>
+				<td>counter</td>
+				<td>Counter of sstables open for writing</td>
+				</tr>
+			
+
+				<tr>
+				<td>360</td>
+				<td class="metric">scylla_stall_detector_reported</td>
+				<td>counter</td>
+				<td>Total number of reported stalls, look in the traces for the exact reason</td>
+				</tr>
+			
+
+				<tr>
+				<td>361</td>
+				<td class="metric">scylla_storage_proxy_coordinator_background_read_repairs</td>
+				<td>counter</td>
+				<td>number of background read repairs</td>
+				</tr>
+			
+
+				<tr>
+				<td>362</td>
+				<td class="metric">scylla_storage_proxy_coordinator_background_reads</td>
+				<td>gauge</td>
+				<td>number of currently pending background read requests</td>
+				</tr>
+			
+
+				<tr>
+				<td>363</td>
+				<td class="metric">scylla_storage_proxy_coordinator_background_replica_writes_failed_local_node</td>
+				<td>counter</td>
+				<td>number of replica writes that timed out or failed after CL was reachedon a local Node</td>
+				</tr>
+			
+
+				<tr>
+				<td>364</td>
+				<td class="metric">scylla_storage_proxy_coordinator_background_writes</td>
+				<td>gauge</td>
+				<td>number of currently pending background write requests</td>
+				</tr>
+			
+
+				<tr>
+				<td>365</td>
+				<td class="metric">scylla_storage_proxy_coordinator_background_writes_failed</td>
+				<td>counter</td>
+				<td>number of write requests that failed after CL was reached</td>
+				</tr>
+			
+
+				<tr>
+				<td>366</td>
+				<td class="metric">scylla_storage_proxy_coordinator_canceled_read_repairs</td>
+				<td>counter</td>
+				<td>number of global read repairs canceled due to a concurrent write</td>
+				</tr>
+			
+
+				<tr>
+				<td>367</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_background</td>
+				<td>gauge</td>
+				<td>how many paxos operations are still running after a result was alredy returned</td>
+				</tr>
+			
+
+				<tr>
+				<td>368</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_dropped_prune</td>
+				<td>counter</td>
+				<td>how many times a coordinator did not perfom prune after cas</td>
+				</tr>
+			
+
+				<tr>
+				<td>369</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_failed_read_round_optimization</td>
+				<td>counter</td>
+				<td>CAS read rounds issued only if previous value is missing on some replica</td>
+				</tr>
+			
+
+				<tr>
+				<td>370</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_foreground</td>
+				<td>gauge</td>
+				<td>how many paxos operations that did not yet produce a result are running</td>
+				</tr>
+			
+
+				<tr>
+				<td>371</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_prune</td>
+				<td>counter</td>
+				<td>how many times paxos prune was done after successful cas operation</td>
+				</tr>
+			
+
+				<tr>
+				<td>372</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_read_contention</td>
+				<td>histogram</td>
+				<td>how many contended reads were encountered</td>
+				</tr>
+			
+
+				<tr>
+				<td>373</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_read_latency</td>
+				<td>histogram</td>
+				<td>Transactional read latency histogram</td>
+				</tr>
+			
+
+				<tr>
+				<td>374</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_read_timeouts</td>
+				<td>counter</td>
+				<td>number of transactional read request failed due to a timeout</td>
+				</tr>
+			
+
+				<tr>
+				<td>375</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_read_unavailable</td>
+				<td>counter</td>
+				<td>number of transactional read requests failed due to an "unavailable" error</td>
+				</tr>
+			
+
+				<tr>
+				<td>376</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_read_unfinished_commit</td>
+				<td>counter</td>
+				<td>number of transaction commit attempts that occurred on read</td>
+				</tr>
+			
+
+				<tr>
+				<td>377</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_total_operations</td>
+				<td>counter</td>
+				<td>number of total paxos operations executed (reads and writes)</td>
+				</tr>
+			
+
+				<tr>
+				<td>378</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_write_condition_not_met</td>
+				<td>counter</td>
+				<td>number of transaction preconditions that did not match current values</td>
+				</tr>
+			
+
+				<tr>
+				<td>379</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_write_contention</td>
+				<td>histogram</td>
+				<td>how many contended writes were encountered</td>
+				</tr>
+			
+
+				<tr>
+				<td>380</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_write_latency</td>
+				<td>histogram</td>
+				<td>Transactional write latency histogram</td>
+				</tr>
+			
+
+				<tr>
+				<td>381</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_write_timeout_due_to_uncertainty</td>
+				<td>counter</td>
+				<td>how many times write timeout was reported because of uncertainty in the result</td>
+				</tr>
+			
+
+				<tr>
+				<td>382</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_write_timeouts</td>
+				<td>counter</td>
+				<td>number of transactional write request failed due to a timeout</td>
+				</tr>
+			
+
+				<tr>
+				<td>383</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_write_unavailable</td>
+				<td>counter</td>
+				<td>number of transactional write requests failed due to an "unavailable" error</td>
+				</tr>
+			
+
+				<tr>
+				<td>384</td>
+				<td class="metric">scylla_storage_proxy_coordinator_cas_write_unfinished_commit</td>
+				<td>counter</td>
+				<td>number of transaction commit attempts that occurred on write</td>
+				</tr>
+			
+
+				<tr>
+				<td>385</td>
+				<td class="metric">scylla_storage_proxy_coordinator_completed_reads_local_node</td>
+				<td>counter</td>
+				<td>number of data read requests that completedon a local Node</td>
+				</tr>
+			
+
+				<tr>
+				<td>386</td>
+				<td class="metric">scylla_storage_proxy_coordinator_completed_reads_remote_node</td>
+				<td>counter</td>
+				<td>number of data read requests that completed when communicating with external Nodes in DC datacenter1</td>
+				</tr>
+			
+
+				<tr>
+				<td>387</td>
+				<td class="metric">scylla_storage_proxy_coordinator_current_throttled_base_writes</td>
+				<td>gauge</td>
+				<td>number of currently throttled base replica write requests</td>
+				</tr>
+			
+
+				<tr>
+				<td>388</td>
+				<td class="metric">scylla_storage_proxy_coordinator_current_throttled_writes</td>
+				<td>gauge</td>
+				<td>number of currently throttled write requests</td>
+				</tr>
+			
+
+				<tr>
+				<td>389</td>
+				<td class="metric">scylla_storage_proxy_coordinator_foreground_read_repairs</td>
+				<td>counter</td>
+				<td>number of foreground read repairs</td>
+				</tr>
+			
+
+				<tr>
+				<td>390</td>
+				<td class="metric">scylla_storage_proxy_coordinator_foreground_reads</td>
+				<td>gauge</td>
+				<td>number of currently pending foreground read requests</td>
+				</tr>
+			
+
+				<tr>
+				<td>391</td>
+				<td class="metric">scylla_storage_proxy_coordinator_foreground_writes</td>
+				<td>gauge</td>
+				<td>number of currently pending foreground write requests</td>
+				</tr>
+			
+
+				<tr>
+				<td>392</td>
+				<td class="metric">scylla_storage_proxy_coordinator_last_mv_flow_control_delay</td>
+				<td>gauge</td>
+				<td>delay (in seconds) added for MV flow control in the last request</td>
+				</tr>
+			
+
+				<tr>
+				<td>393</td>
+				<td class="metric">scylla_storage_proxy_coordinator_range_timeouts</td>
+				<td>counter</td>
+				<td>number of range read operations failed due to a timeout</td>
+				</tr>
+			
+
+				<tr>
+				<td>394</td>
+				<td class="metric">scylla_storage_proxy_coordinator_range_unavailable</td>
+				<td>counter</td>
+				<td>number of range read operations failed due to an "unavailable" error</td>
+				</tr>
+			
+
+				<tr>
+				<td>395</td>
+				<td class="metric">scylla_storage_proxy_coordinator_read_errors_local_node</td>
+				<td>counter</td>
+				<td>number of data read requests that failedon a local Node</td>
+				</tr>
+			
+
+				<tr>
+				<td>396</td>
+				<td class="metric">scylla_storage_proxy_coordinator_read_errors_remote_node</td>
+				<td>counter</td>
+				<td>number of data read requests that failed when communicating with external Nodes in DC datacenter1</td>
+				</tr>
+			
+
+				<tr>
+				<td>397</td>
+				<td class="metric">scylla_storage_proxy_coordinator_read_latency</td>
+				<td>histogram</td>
+				<td>The general read latency histogram</td>
+				</tr>
+			
+
+				<tr>
+				<td>398</td>
+				<td class="metric">scylla_storage_proxy_coordinator_read_rate_limited</td>
+				<td>counter</td>
+				<td>number of read requests which were rejected by replicas because rate limit for the partition was reached.</td>
+				</tr>
+			
+
+				<tr>
+				<td>399</td>
+				<td class="metric">scylla_storage_proxy_coordinator_read_repair_write_attempts_local_node</td>
+				<td>counter</td>
+				<td>number of write operations in a read repair contexton a local Node</td>
+				</tr>
+			
+
+				<tr>
+				<td>400</td>
+				<td class="metric">scylla_storage_proxy_coordinator_read_repair_write_attempts_remote_node</td>
+				<td>counter</td>
+				<td>number of write operations in a read repair context when communicating with external Nodes in DC datacenter1</td>
+				</tr>
+			
+
+				<tr>
+				<td>401</td>
+				<td class="metric">scylla_storage_proxy_coordinator_read_retries</td>
+				<td>counter</td>
+				<td>number of read retry attempts</td>
+				</tr>
+			
+
+				<tr>
+				<td>402</td>
+				<td class="metric">scylla_storage_proxy_coordinator_read_timeouts</td>
+				<td>counter</td>
+				<td>number of read request failed due to a timeout</td>
+				</tr>
+			
+
+				<tr>
+				<td>403</td>
+				<td class="metric">scylla_storage_proxy_coordinator_read_unavailable</td>
+				<td>counter</td>
+				<td>number read requests failed due to an "unavailable" error</td>
+				</tr>
+			
+
+				<tr>
+				<td>404</td>
+				<td class="metric">scylla_storage_proxy_coordinator_reads_coordinator_outside_replica_set</td>
+				<td>counter</td>
+				<td>number of CQL read requests which arrived to a non-replica and had to be forwarded to a replica</td>
+				</tr>
+			
+
+				<tr>
+				<td>405</td>
+				<td class="metric">scylla_storage_proxy_coordinator_reads_local_node</td>
+				<td>counter</td>
+				<td>number of data read requestson a local Node</td>
+				</tr>
+			
+
+				<tr>
+				<td>406</td>
+				<td class="metric">scylla_storage_proxy_coordinator_reads_remote_node</td>
+				<td>counter</td>
+				<td>number of data read requests when communicating with external Nodes in DC datacenter1</td>
+				</tr>
+			
+
+				<tr>
+				<td>407</td>
+				<td class="metric">scylla_storage_proxy_coordinator_speculative_data_reads</td>
+				<td>counter</td>
+				<td>number of speculative data read requests that were sent</td>
+				</tr>
+			
+
+				<tr>
+				<td>408</td>
+				<td class="metric">scylla_storage_proxy_coordinator_speculative_digest_reads</td>
+				<td>counter</td>
+				<td>number of speculative digest read requests that were sent</td>
+				</tr>
+			
+
+				<tr>
+				<td>409</td>
+				<td class="metric">scylla_storage_proxy_coordinator_throttled_writes</td>
+				<td>counter</td>
+				<td>number of throttled write requests</td>
+				</tr>
+			
+
+				<tr>
+				<td>410</td>
+				<td class="metric">scylla_storage_proxy_coordinator_total_write_attempts_local_node</td>
+				<td>counter</td>
+				<td>total number of write requestson a local Node</td>
+				</tr>
+			
+
+				<tr>
+				<td>411</td>
+				<td class="metric">scylla_storage_proxy_coordinator_total_write_attempts_remote_node</td>
+				<td>counter</td>
+				<td>total number of write requests when communicating with external Nodes in DC datacenter1</td>
+				</tr>
+			
+
+				<tr>
+				<td>412</td>
+				<td class="metric">scylla_storage_proxy_coordinator_write_errors_local_node</td>
+				<td>counter</td>
+				<td>number of write requests that failedon a local Node</td>
+				</tr>
+			
+
+				<tr>
+				<td>413</td>
+				<td class="metric">scylla_storage_proxy_coordinator_write_latency</td>
+				<td>histogram</td>
+				<td>The general write latency histogram</td>
+				</tr>
+			
+
+				<tr>
+				<td>414</td>
+				<td class="metric">scylla_storage_proxy_coordinator_write_rate_limited</td>
+				<td>counter</td>
+				<td>number of write requests which were rejected by replicas because rate limit for the partition was reached.</td>
+				</tr>
+			
+
+				<tr>
+				<td>415</td>
+				<td class="metric">scylla_storage_proxy_coordinator_write_timeouts</td>
+				<td>counter</td>
+				<td>number of write request failed due to a timeout</td>
+				</tr>
+			
+
+				<tr>
+				<td>416</td>
+				<td class="metric">scylla_storage_proxy_coordinator_write_unavailable</td>
+				<td>counter</td>
+				<td>number write requests failed due to an "unavailable" error</td>
+				</tr>
+			
+
+				<tr>
+				<td>417</td>
+				<td class="metric">scylla_storage_proxy_coordinator_writes_coordinator_outside_replica_set</td>
+				<td>counter</td>
+				<td>number of CQL write requests which arrived to a non-replica and had to be forwarded to a replica</td>
+				</tr>
+			
+
+				<tr>
+				<td>418</td>
+				<td class="metric">scylla_storage_proxy_coordinator_writes_failed_due_to_too_many_in_flight_hints</td>
+				<td>counter</td>
+				<td>number of CQL write requests which failed because the hinted handoff mechanism is overloaded and cannot store any more in-flight hints</td>
+				</tr>
+			
+
+				<tr>
+				<td>419</td>
+				<td class="metric">scylla_storage_proxy_replica_cas_dropped_prune</td>
+				<td>counter</td>
+				<td>how many times a coordinator did not perfom prune after cas</td>
+				</tr>
+			
+
+				<tr>
+				<td>420</td>
+				<td class="metric">scylla_storage_proxy_replica_cross_shard_ops</td>
+				<td>counter</td>
+				<td>number of operations that crossed a shard boundary</td>
+				</tr>
+			
+
+				<tr>
+				<td>421</td>
+				<td class="metric">scylla_storage_proxy_replica_forwarded_mutations</td>
+				<td>counter</td>
+				<td>number of mutations forwarded to other replica Nodes</td>
+				</tr>
+			
+
+				<tr>
+				<td>422</td>
+				<td class="metric">scylla_storage_proxy_replica_forwarding_errors</td>
+				<td>counter</td>
+				<td>number of errors during forwarding mutations to other replica Nodes</td>
+				</tr>
+			
+
+				<tr>
+				<td>423</td>
+				<td class="metric">scylla_storage_proxy_replica_reads</td>
+				<td>counter</td>
+				<td>number of remote data read requests this Node received</td>
+				</tr>
+			
+
+				<tr>
+				<td>424</td>
+				<td class="metric">scylla_storage_proxy_replica_received_counter_updates</td>
+				<td>counter</td>
+				<td>number of counter updates received by this node acting as an update leader</td>
+				</tr>
+			
+
+				<tr>
+				<td>425</td>
+				<td class="metric">scylla_storage_proxy_replica_received_mutations</td>
+				<td>counter</td>
+				<td>number of mutations received by a replica Node</td>
+				</tr>
+			
+
+				<tr>
+				<td>426</td>
+				<td class="metric">scylla_streaming_total_incoming_bytes</td>
+				<td>counter</td>
+				<td>Total number of bytes received on this shard.</td>
+				</tr>
+			
+
+				<tr>
+				<td>427</td>
+				<td class="metric">scylla_streaming_total_outgoing_bytes</td>
+				<td>counter</td>
+				<td>Total number of bytes sent on this shard.</td>
+				</tr>
+			
+
+				<tr>
+				<td>428</td>
+				<td class="metric">scylla_tracing_active_sessions</td>
+				<td>gauge</td>
+				<td>Holds a number of a currently active tracing sessions.</td>
+				</tr>
+			
+
+				<tr>
+				<td>429</td>
+				<td class="metric">scylla_tracing_cached_records</td>
+				<td>gauge</td>
+				<td>Holds a number of tracing records cached in the tracing sessions that are not going to be written in the next write event. If sum of this metric, pending_for_write_records and flushing_records is close to 11000 we are likely to start dropping tracing records.</td>
+				</tr>
+			
+
+				<tr>
+				<td>430</td>
+				<td class="metric">scylla_tracing_dropped_records</td>
+				<td>counter</td>
+				<td>Counts a number of dropped records due to too many pending records. High value indicates that backend is saturated with the rate with which new tracing records are created.</td>
+				</tr>
+			
+
+				<tr>
+				<td>431</td>
+				<td class="metric">scylla_tracing_dropped_sessions</td>
+				<td>counter</td>
+				<td>Counts a number of dropped sessions due to too many pending sessions/records. High value indicates that backend is saturated with the rate with which new tracing records are created.</td>
+				</tr>
+			
+
+				<tr>
+				<td>432</td>
+				<td class="metric">scylla_tracing_flushing_records</td>
+				<td>gauge</td>
+				<td>Holds a number of tracing records that currently being written to the I/O backend. If sum of this metric, cached_records and pending_for_write_records is close to 11000 we are likely to start dropping tracing records.</td>
+				</tr>
+			
+
+				<tr>
+				<td>433</td>
+				<td class="metric">scylla_tracing_keyspace_helper_bad_column_family_errors</td>
+				<td>counter</td>
+				<td>Counts a number of times write failed due to one of the tables in the system_traces keyspace has an incompatible schema. One error may result one or more tracing records to be lost. Non-zero value indicates that the administrator has to take immediate steps to fix the corresponding schema. The appropriate error message will be printed in the syslog.</td>
+				</tr>
+			
+
+				<tr>
+				<td>434</td>
+				<td class="metric">scylla_tracing_keyspace_helper_tracing_errors</td>
+				<td>counter</td>
+				<td>Counts a number of errors during writing to a system_traces keyspace. One error may cause one or more tracing records to be lost.</td>
+				</tr>
+			
+
+				<tr>
+				<td>435</td>
+				<td class="metric">scylla_tracing_pending_for_write_records</td>
+				<td>gauge</td>
+				<td>Holds a number of tracing records that are going to be written in the next write event. If sum of this metric, cached_records and flushing_records is close to 11000 we are likely to start dropping tracing records.</td>
+				</tr>
+			
+
+				<tr>
+				<td>436</td>
+				<td class="metric">scylla_tracing_trace_errors</td>
+				<td>counter</td>
+				<td>Counts a number of trace records dropped due to an error (e.g. OOM).</td>
+				</tr>
+			
+
+				<tr>
+				<td>437</td>
+				<td class="metric">scylla_tracing_trace_records_count</td>
+				<td>counter</td>
+				<td>This metric is a rate of tracing records generation.</td>
+				</tr>
+			
+
+				<tr>
+				<td>438</td>
+				<td class="metric">scylla_transport_auth_responses</td>
+				<td>counter</td>
+				<td>Counts the total number of received CQL AUTH messages.</td>
+				</tr>
+			
+
+				<tr>
+				<td>439</td>
+				<td class="metric">scylla_transport_batch_requests</td>
+				<td>counter</td>
+				<td>Counts the total number of received CQL BATCH messages.</td>
+				</tr>
+			
+
+				<tr>
+				<td>440</td>
+				<td class="metric">scylla_transport_cql_connections</td>
+				<td>counter</td>
+				<td>Counts a number of client connections.</td>
+				</tr>
+			
+
+				<tr>
+				<td>441</td>
+				<td class="metric">scylla_transport_cql_errors_total</td>
+				<td>counter</td>
+				<td>Counts the total number of returned CQL errors.</td>
+				</tr>
+			
+
+				<tr>
+				<td>442</td>
+				<td class="metric">scylla_transport_current_connections</td>
+				<td>gauge</td>
+				<td>Holds a current number of client connections.</td>
+				</tr>
+			
+
+				<tr>
+				<td>443</td>
+				<td class="metric">scylla_transport_execute_requests</td>
+				<td>counter</td>
+				<td>Counts the total number of received CQL EXECUTE messages.</td>
+				</tr>
+			
+
+				<tr>
+				<td>444</td>
+				<td class="metric">scylla_transport_options_requests</td>
+				<td>counter</td>
+				<td>Counts the total number of received CQL OPTIONS messages.</td>
+				</tr>
+			
+
+				<tr>
+				<td>445</td>
+				<td class="metric">scylla_transport_prepare_requests</td>
+				<td>counter</td>
+				<td>Counts the total number of received CQL PREPARE messages.</td>
+				</tr>
+			
+
+				<tr>
+				<td>446</td>
+				<td class="metric">scylla_transport_query_requests</td>
+				<td>counter</td>
+				<td>Counts the total number of received CQL QUERY messages.</td>
+				</tr>
+			
+
+				<tr>
+				<td>447</td>
+				<td class="metric">scylla_transport_register_requests</td>
+				<td>counter</td>
+				<td>Counts the total number of received CQL REGISTER messages.</td>
+				</tr>
+			
+
+				<tr>
+				<td>448</td>
+				<td class="metric">scylla_transport_requests_blocked_memory</td>
+				<td>counter</td>
+				<td>Holds an incrementing counter with the requests that ever blocked due to reaching the memory quota limit (183500800B). The first derivative of this value shows how often we block due to memory exhaustion in the "CQL transport" component.</td>
+				</tr>
+			
+
+				<tr>
+				<td>449</td>
+				<td class="metric">scylla_transport_requests_blocked_memory_current</td>
+				<td>gauge</td>
+				<td>Holds the number of requests that are currently blocked due to reaching the memory quota limit (183500800B). Non-zero value indicates that our bottleneck is memory and more specifically - the memory quota allocated for the "CQL transport" component.</td>
+				</tr>
+			
+
+				<tr>
+				<td>450</td>
+				<td class="metric">scylla_transport_requests_memory_available</td>
+				<td>gauge</td>
+				<td>Holds the amount of available memory for admitting new requests (max is 183500800B).Zero value indicates that our bottleneck is memory and more specifically - the memory quota allocated for the "CQL transport" component.</td>
+				</tr>
+			
+
+				<tr>
+				<td>451</td>
+				<td class="metric">scylla_transport_requests_served</td>
+				<td>counter</td>
+				<td>Counts a number of served requests.</td>
+				</tr>
+			
+
+				<tr>
+				<td>452</td>
+				<td class="metric">scylla_transport_requests_serving</td>
+				<td>gauge</td>
+				<td>Holds a number of requests that are being processed right now.</td>
+				</tr>
+			
+
+				<tr>
+				<td>453</td>
+				<td class="metric">scylla_transport_requests_shed</td>
+				<td>counter</td>
+				<td>Holds an incrementing counter with the requests that were shed due to overload (threshold configured via max_concurrent_requests_per_shard). The first derivative of this value shows how often we shed requests due to overload in the "CQL transport" component.</td>
+				</tr>
+			
+
+				<tr>
+				<td>454</td>
+				<td class="metric">scylla_transport_startups</td>
+				<td>counter</td>
+				<td>Counts the total number of received CQL STARTUP messages.</td>
+				</tr>
+			
+
+				<tr>
+				<td>455</td>
+				<td class="metric">scylla_view_builder_builds_in_progress</td>
+				<td>gauge</td>
+				<td>Number of currently active view builds.</td>
+				</tr>
+			
+
+				<tr>
+				<td>456</td>
+				<td class="metric">scylla_view_builder_pending_bookkeeping_ops</td>
+				<td>gauge</td>
+				<td>Number of tasks waiting to perform bookkeeping operations</td>
+				</tr>
+			
+
+				<tr>
+				<td>457</td>
+				<td class="metric">scylla_view_builder_steps_failed</td>
+				<td>counter</td>
+				<td>Number of failed build steps.</td>
+				</tr>
+			
+
+				<tr>
+				<td>458</td>
+				<td class="metric">scylla_view_builder_steps_performed</td>
+				<td>counter</td>
+				<td>Number of performed build steps.</td>
+				</tr>
+			
+
+				<tr>
+				<td>459</td>
+				<td class="metric">scylla_view_update_generator_pending_registrations</td>
+				<td>gauge</td>
+				<td>Number of tasks waiting to register staging sstables</td>
+				</tr>
+			
+
+				<tr>
+				<td>460</td>
+				<td class="metric">scylla_view_update_generator_queued_batches_count</td>
+				<td>gauge</td>
+				<td>Number of sets of sstables queued for view update generation</td>
+				</tr>
+			
+
+				<tr>
+				<td>461</td>
+				<td class="metric">scylla_view_update_generator_sstables_to_move_count</td>
+				<td>gauge</td>
+				<td>Number of sets of sstables which are already processed and wait to be moved from their staging directory</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<footer>
+		Generated on 2023-02-07. Edit at <a href="https://github.com/knadh/scylla-metrics-docs">knadh/scylla-metrics-docs</a>.
+	</footer>
+
+	<script>
+		let timer = null;
+
+		const filter = (query) => {
+			const hasQuery = query.length > 1;
+
+			document.querySelectorAll("tbody tr").forEach((el) => {
+				let disp = "";
+				if(hasQuery && el.innerText.indexOf(query) === -1) {
+					disp = "none";
+				}
+
+				el.style.display = disp;
+			});
+		};
+
+		document.querySelector("#q").onkeyup = (e) => {
+			if (timer) {
+				window.clearTimeout(timer);
+			};
+
+			timer = window.setTimeout(() => {
+				window.clearTimeout(timer);
+				filter(e.target.value);
+			}, 100);
+		};
+	</script>
+</main>
+
+</body>
+</html>
+
